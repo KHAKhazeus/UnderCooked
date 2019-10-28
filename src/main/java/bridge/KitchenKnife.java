@@ -10,16 +10,16 @@ public class KitchenKnife implements Knife {
 
     @Override
     public void cut() {
-        System.out.printf("Cutting with kitchen knife: %s.", this.name);
+        System.out.printf("Cutting with kitchen knife: %s.\n", this.name);
     }
 
     @Override
     public void chop() {
-        System.out.printf("Chopping with kitchen knife: %s.", this.name);
+        System.out.printf("Chopping with kitchen knife: %s.\n", this.name);
     }
 
     @Override
     public void peel() {
-        System.out.printf("Peeling with kitchen knife: %s.", this.name);
+        System.out.printf("Peeling with kitchen knife: %s.\n", this.name);
     }
 }
