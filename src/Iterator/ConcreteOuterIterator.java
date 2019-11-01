@@ -1,22 +1,57 @@
 package Iterator;
 
-public class ConcreteIterator implements Iterator{
+/*
+    OuterIterator with package-friendly setCollection function
+ */
+
+import org.jetbrains.annotations.NotNull;
+
+public class ConcreteOuterIterator implements Iterator{
+    void setCollection(@NotNull ConcreteCollection target) {
+        collection = target;
+        cur = target.getData();
+    }
 
     ConcreteCollection collection;
+    Object cur = null;
+
     @Override
     public Boolean hasNext() {
-        System.out.println("ConcreteIterator: found another one!");
-        return ture;
+        System.out.println("ConcreteOuterIterator: found another one!");
+        return true;
     }
 
     @Override
-    public Iterator next() {
+    public Iterator next(){
         if (hasNext()){
-            System.out.println("ConcreteIterator: got another one, returning");
+            System.out.println("ConcreteOuterIterator: got another one, returning");
+            Object data = collection.getData();
+            cur = data;
+            if (data != null){
+                System.out.println("Data Returned by ConcreteOuterIterator");
+            }
+            else{
+                System.out.println("ConcreteCollection Failure!");
+                System.exit(1);
+            }
+            return this;
         }
         else{
-            System.out.println("ConcreteIterator: no other elements! ");
+            System.out.println("ConcreteOuterIterator: no other elements! ");
             return null;
+        }
+    }
+
+    @Override
+    public Object deduce(){
+        if(cur == null){
+            System.out.println("ConcreteOuterIterator: Wandering Iterator!");
+            System.exit(1);
+            return null;
+        }
+        else{
+            System.out.println("ConcreteOuterIterator: Successfully deduced!");
+            return cur;
         }
     }
 }

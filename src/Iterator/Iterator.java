@@ -19,4 +19,5 @@ public interface Iterator{
 //    void setCollection(Collection target);
     public Boolean hasNext();
     public Iterator next();
+    public Object deduce();
 }

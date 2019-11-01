@@ -2,7 +2,7 @@ package Iterator;
 
 class Stranger{
     public Stranger(String name){
-        name = name;
+        this.name = name;
     }
     public String name;
 }
