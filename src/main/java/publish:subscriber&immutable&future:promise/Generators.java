@@ -2,22 +2,20 @@
 // 设计模式:
 // 发布订阅模式(pub-sub)
 // 不可变对象模式(immutable)
-// Promise/Future模式
+// Future/Promise 模式
 
 import java.util.ArrayList;
 import java.util.concurrent.Callable;
 import java.util.List;
 
+// 发布订阅模式
 public class Generators extends Thread implements Generator, Callable<String> {
     private Thread t;
-    private String GenName;
-    private String food;
-
-    private List<Cook> cooksList = new ArrayList<Cook>();
+    private String GenName; // 不可变对象模式
+    private List<Cook> cooksList = new ArrayList<Cook>(); // 订阅者
 
     Generators(String name) {
         GenName = name;
-        food = GenName;
         System.out.println("Creating " + GenName);
     }
 
@@ -30,19 +28,20 @@ public class Generators extends Thread implements Generator, Callable<String> {
         cooksList.remove(cook);
     }
 
+    // Future/Promise 模式
     @Override
     public String call() throws Exception {
         for (Cook list : cooksList) {
-            list.UpdateMsg(this.food);
+            list.UpdateMsg(this.GenName);
         }
-        return food;
+        return GenName;
     }
 
     public void run() {
         System.out.println("Running " + GenName);
         try {
             for (Cook list : cooksList) {
-                list.UpdateMsg(this.food);
+                list.UpdateMsg(this.GenName);
                 Thread.sleep(50);
             }
         } catch (InterruptedException e) {
