@@ -3,7 +3,7 @@ package Test;
 import Iterator.Iterator;
 import Iterator.StrangersCollection;
 
-public class StrangerIteratorTest {
+public class IteratorTest {
     public static void main(String[] args) {
         StrangersCollection coll = new StrangersCollection();
         coll.insert("Cheng");
