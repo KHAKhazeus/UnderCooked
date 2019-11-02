@@ -1,3 +1,5 @@
+// 设计模式: 备忘录模式(memento)
+// 保存此时的音量信息
 public class menu {
     private static vol;
     public void Save() {

@@ -1,3 +1,9 @@
+// 食材工厂接口的实现
+// 设计模式:
+// 发布订阅模式(pub-sub)
+// 不可变对象模式(immutable)
+// Promise/Future模式
+
 import java.util.ArrayList;
 import java.util.concurrent.Callable;
 import java.util.List;
@@ -22,11 +28,6 @@ public class Generators extends Thread implements Generator, Callable<String> {
     @Override
     public void deleteCook(Cook cook) {
         cooksList.remove(cook);
-    }
-
-    @Override
-    public void notifyAllCook(String msg) {
-        // food = msg;
     }
 
     @Override

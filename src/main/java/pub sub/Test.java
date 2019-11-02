@@ -1,3 +1,4 @@
+// main 
 import java.util.concurrent.FutureTask;
 
 public class Test {
@@ -24,9 +25,6 @@ public class Test {
         gen1.start();
         FutureTask<String> ft = new FutureTask<>(gen2);
         new Thread(ft).start();
-        // send
-        // gen1.notifyAllCook("apple");
-        // gen2.notifyAllCook("pear");
 
         // try {
         // System.out.println("子线程的返回值：" + ft.get());
