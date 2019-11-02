@@ -1,4 +1,4 @@
-package main.java.Iterator;
+package Iterator;
 
 public interface Collection{
     public int size();

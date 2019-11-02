@@ -1,4 +1,4 @@
-package main.java.Iterator;
+package Iterator;
 
 /*
     Name: main.java.Iterator

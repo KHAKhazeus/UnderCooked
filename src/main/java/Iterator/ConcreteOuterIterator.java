@@ -1,13 +1,12 @@
-package main.java.Iterator;
+package Iterator;
 
 /*
     OuterIterator with package-friendly setCollection function
  */
 
-import org.jetbrains.annotations.NotNull;
 
 public class ConcreteOuterIterator implements Iterator{
-    void setCollection(@NotNull ConcreteCollection target) {
+    void setCollection(ConcreteCollection target) {
         collection = target;
         cur = target.getData();
     }

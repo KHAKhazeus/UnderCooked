@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Iterator.StrangersCollectionTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-11-02T06:14:11" hostname="KhazeusMBP.local" time="0.073">
+  <properties/>
+  <testcase name="main()" classname="Iterator.StrangersCollectionTest" time="0.073"/>
+  <system-out><![CDATA[New Stranger inserted in StrangerCollection!
+New Stranger inserted in StrangerCollection!
+ConcreteInnerStrangersIterator: Successfully deduced!
+Iterator.Stranger@641d5d10
+ConcreteInnerStrangersIterator: found another one!
+true
+ConcreteInnerStrangersIterator: Successfully deduced!
+Iterator.Stranger@641d5d10
+ConcreteInnerStrangersIterator: found another one!
+Fetching Next Stranger
+Next Customer arrived (DO SOMETHING!)
+Next Customer named: Nice
+ConcreteInnerStrangersIterator: Successfully deduced!
+Iterator.Stranger@3bb8a1ca
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

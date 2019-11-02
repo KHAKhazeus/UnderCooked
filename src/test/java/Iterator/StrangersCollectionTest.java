@@ -1,10 +1,13 @@
-package test;
+package Iterator;
 
-import main.java.Iterator.Iterator;
-import main.java.Iterator.StrangersCollection;
+import org.junit.jupiter.api.Test;
 
-public class IteratorTest {
-    public static void main(String[] args) {
+import static org.junit.jupiter.api.Assertions.*;
+
+class StrangersCollectionTest {
+    @Test
+    void main(){
+
         StrangersCollection coll = new StrangersCollection();
         coll.insert("Cheng");
         coll.insert("Nice");
