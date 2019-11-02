@@ -17,7 +17,7 @@ public class InformationMaster extends SingletonXMLMaster {
 
     @Override
     public void addToBranches(Branch branch) {
-
+        
     }
 
     @Override
