@@ -4,6 +4,8 @@ package Iterator;
     Not a really practical Collection!
  */
 
+import Utils.Utils;
+
 public class ConcreteCollection implements Collection{
 
     private int size = 0;
@@ -24,7 +26,7 @@ public class ConcreteCollection implements Collection{
 
     public void insert(Object thing) {
         data = thing;
-        System.out.println("ConcreteCollection: new Element");
+        Utils.logger.info(this + " : new Element");
         size++;
     }
 

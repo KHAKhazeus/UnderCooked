@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="visitor.VisitorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-11-02T06:36:54" hostname="KhazeusMBP.local" time="5.57">
+  <properties/>
+  <testcase name="main()" classname="visitor.VisitorTest" time="5.57"/>
+  <system-out><![CDATA[visitor.CarMaintainer : visit : Maintaining car
+visitor.CarMaintainer : visit : Maintaining engine
+visitor.CarMaintainer : visit : Maintaining body
+visitor.CarMaintainer : visit : Maintaining front left wheel
+visitor.CarMaintainer : visit : visitor.CarMaintainer@74899247
+visitor.CarMaintainer : visit : Maintaining front right wheel
+visitor.CarMaintainer : visit : visitor.CarMaintainer@74899247
+visitor.CarMaintainer : visit : Maintaining back left wheel
+visitor.CarMaintainer : visit : visitor.CarMaintainer@74899247
+visitor.CarMaintainer : visit : Maintaining back right wheel
+visitor.CarMaintainer : visit : visitor.CarMaintainer@74899247
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

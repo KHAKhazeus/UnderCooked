@@ -1,11 +1,11 @@
 package visitor;
 
 
-import org.apache.logging.log4j.LogManager;
+import Utils.Utils;
 import org.apache.logging.log4j.Logger;
 
 public class CarMaintainer implements Visitor {
-    public static final Logger logger = LogManager.getLogger();
+    public static final Logger logger = Utils.logger;
 
     public void visit(Wheel wheel) {
         logger.info("Maintaining " + wheel.getName()

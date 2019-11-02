@@ -7,7 +7,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class StrangersCollectionTest {
     @Test
     void main(){
-
         StrangersCollection coll = new StrangersCollection();
         coll.insert("Cheng");
         coll.insert("Nice");

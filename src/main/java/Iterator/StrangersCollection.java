@@ -1,5 +1,7 @@
 package Iterator;
 
+import Utils.Utils;
+
 import java.util.ArrayList;
 
 public class StrangersCollection extends ConcreteCollectionWithInnerIterator{
@@ -21,7 +23,7 @@ public class StrangersCollection extends ConcreteCollectionWithInnerIterator{
         @Override
         public Boolean hasNext() {
             if ((cur + 1) >=0 && (cur + 1) < list.size()){
-                System.out.println("ConcreteInnerStrangersIterator: found another one!");
+                Utils.decorateLog(this, "found another one!");
                 return true;
             }
             else {
