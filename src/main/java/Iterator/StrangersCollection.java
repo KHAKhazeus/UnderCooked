@@ -34,7 +34,7 @@ public class StrangersCollection extends ConcreteCollectionWithInnerIterator{
         @Override
         public Iterator next(){
             if (hasNext()){
-                System.out.println("Fetching Next Stranger");
+                Utils.decorateLog(this, "fetching next Stranger");
                 Stranger data = getData(cur + 1);
                 if (data != null){
                     cur++;
