@@ -1,4 +1,4 @@
-package futurePromise
+package futurePromise;
 // Cooks 的接口
 
 public interface Cook {

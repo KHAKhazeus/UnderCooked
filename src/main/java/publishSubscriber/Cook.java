@@ -1,4 +1,4 @@
-package publishSubscriber 
+package publishSubscriber;
 // Cooks 的接口
 
 public interface Cook {

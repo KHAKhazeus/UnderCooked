@@ -1,4 +1,4 @@
-package memento
+package memento;
 // 设计模式: 备忘录模式(memento)
 
 public class menu {

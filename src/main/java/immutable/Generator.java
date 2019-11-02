@@ -1,4 +1,4 @@
-package immutable
+package immutable;
 // 食材工厂接口
 
 public interface Generator {
