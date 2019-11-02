@@ -4,10 +4,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class publishSubscriberTest {
+class futurePromiseTest {
     @Test
     void main() {
-        System.out.println("Test immutable")
+        System.out.println("Test future/promise")
 
         Cooks cook1 = new Cooks("厨师1·");
         Cooks cook2 = new Cooks("厨师2");
