@@ -5,6 +5,8 @@ package Iterator;
  */
 
 
+import Utils.Utils;
+
 public class ConcreteOuterIterator implements Iterator{
     void setCollection(ConcreteCollection target) {
         collection = target;
@@ -16,27 +18,27 @@ public class ConcreteOuterIterator implements Iterator{
 
     @Override
     public Boolean hasNext() {
-        System.out.println("ConcreteOuterIterator: found another one!");
+        Utils.logger.info("(" + this.toString() + ") : " + "found another one!");
         return true;
     }
 
     @Override
     public Iterator next(){
         if (hasNext()){
-            System.out.println("ConcreteOuterIterator: got another one, returning");
+            Utils.logger.info("(" + this.toString() + ") : " + "got another one, returning");
             Object data = collection.getData();
             cur = data;
             if (data != null){
-                System.out.println("Data Returned by ConcreteOuterIterator");
+                Utils.logger.info("(" + this.toString() + ") : " + "Data Returned by ConcreteInnerIterator");
             }
             else{
-                System.out.println("ConcreteCollection Failure!");
+                Utils.logger.error("(" + this.toString() + ") : " + "ConcreteCollectionWithInnerIterator Failure");
                 System.exit(1);
             }
             return this;
         }
         else{
-            System.out.println("ConcreteOuterIterator: no other elements! ");
+            Utils.logger.info("(" + this.toString() + ") : " + "no other elements!");
             return null;
         }
     }
@@ -44,12 +46,12 @@ public class ConcreteOuterIterator implements Iterator{
     @Override
     public Object deduce(){
         if(cur == null){
-            System.out.println("ConcreteOuterIterator: Wandering main.java.Iterator!");
+            Utils.logger.error("(" + this.toString() + ") : " + "Wandering main.java.Iterator!");
             System.exit(1);
             return null;
         }
         else{
-            System.out.println("ConcreteOuterIterator: Successfully deduced!");
+            Utils.logger.info("(" + this.toString() + ") : " + "Successfully deduced!");
             return cur;
         }
     }

@@ -23,7 +23,7 @@ public class StrangersCollection extends ConcreteCollectionWithInnerIterator{
         @Override
         public Boolean hasNext() {
             if ((cur + 1) >=0 && (cur + 1) < list.size()){
-                Utils.decorateLog(this, "found another one!");
+                Utils.logger.info("(" + this.toString() + ") : " + "found another one!");
                 return true;
             }
             else {
@@ -34,21 +34,21 @@ public class StrangersCollection extends ConcreteCollectionWithInnerIterator{
         @Override
         public Iterator next(){
             if (hasNext()){
-                Utils.decorateLog(this, "fetching next Stranger");
+                Utils.logger.info("(" + this.toString() + ") : " + "fetching next Stranger");
                 Stranger data = getData(cur + 1);
                 if (data != null){
                     cur++;
-                    System.out.println("Next Customer arrived (DO SOMETHING!)");
-                    System.out.println("Next Customer named: " + data.name);
+                    Utils.logger.info("(" + this.toString() + ") : " + "Next Customer arrived (DO SOMETHING!)");
+                    Utils.logger.info("(" + this.toString() + ") : " + "Next Customer named: " + data.name);
                 }
                 else{
-                    System.out.println("StrangerCollection Failure");
+                    Utils.logger.error("(" + this.toString() + ") : " + "StrangerCollection Failure");
                     System.exit(1);
                 }
                 return this;
             }
             else{
-                System.out.println("ConcreteInnerStrangersIterator: no other elements! ");
+                Utils.logger.info("(" + this.toString() + ") : " + "no other elements!");
                 return null;
             }
         }
@@ -56,12 +56,12 @@ public class StrangersCollection extends ConcreteCollectionWithInnerIterator{
         @Override
         public Stranger deduce(){
             if(cur < 0 || cur >= list.size()){
-                System.out.println("ConcreteInnerStrangersIterator: Wandering main.java.Iterator!");
+                Utils.logger.error("(" + this.toString() + ") : " + "Wandering main.java.Iterator!");
                 System.exit(1);
                 return null;
             }
             else{
-                System.out.println("ConcreteInnerStrangersIterator: Successfully deduced!");
+                Utils.logger.info("(" + this.toString() + ") : " + "Successfully deduced!");
                 return getData(cur);
             }
         }
@@ -87,7 +87,7 @@ public class StrangersCollection extends ConcreteCollectionWithInnerIterator{
 
     public void insert(String name) {
         Stranger stranger = new Stranger(name);
-        System.out.println("New Stranger inserted in StrangerCollection!");
+        Utils.logger.info("(" + this.toString() + ") : " + "New Stranger inserted in StrangerCollection!");
         list.add(stranger);
         size++;
     }

@@ -1,5 +1,6 @@
 package Iterator;
 
+import Utils.Utils;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -11,9 +12,9 @@ class StrangersCollectionTest {
         coll.insert("Cheng");
         coll.insert("Nice");
         Iterator it = coll.iterator();
-        System.out.println(it.deduce());
-        System.out.println(it.hasNext());
-        System.out.println(it.deduce());
-        System.out.println(it.next().deduce());
+        Utils.logger.debug("(" + this.toString() + ") : " + it.deduce());
+        Utils.logger.debug("(" + this.toString() + ") : " + it.hasNext());
+        Utils.logger.debug("(" + this.toString() + ") : " + it.deduce());
+        Utils.logger.debug("(" + this.toString() + ") : " + it.next().deduce());
     }
 }
