@@ -31,6 +31,6 @@ class futurePromiseTest {
 
         gen1.start();
         FutureTask<String> ft = new FutureTask<>(gen2);
-        var v = new Thread(ft).start();
+        new Thread(ft).start();
     }
 }
