@@ -1,4 +1,4 @@
-package main.java.Mediator;
+package Mediator;
 
 import java.util.ArrayList;
 
@@ -15,10 +15,6 @@ import java.util.ArrayList;
  */
 
 public interface GrandMaster {
-    ArrayList branches = null;
-    ArrayList buffer = null;
     void addToBranches(Branch branch);
-    void inform(Object msg, Object... args);
     void removeFromBranches(Branch branch);
-    void receive(Object msg, Object... args);
 }

@@ -1,4 +1,6 @@
-package main.java.Mediator;
+package Mediator;
+
+import java.util.ArrayList;
 
 /*
     Make GrandMaster Singleton
@@ -6,9 +8,11 @@ package main.java.Mediator;
     xml file.
  */
 abstract public class SingletonXMLMaster implements GrandMaster{
+    ArrayList branches = null;
+    ArrayList buffer = null;
     String rules;
     SingletonXMLMaster singleton = null;
     SingletonXMLMaster(){ }
 
-    abstract public SingletonXMLMaster getInstance(String xml);
+    public static <INFOTYPE> SingletonXMLMaster getInstance(String xml){return null;}
 }
