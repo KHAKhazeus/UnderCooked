@@ -12,7 +12,7 @@ import java.util.List;
 // 发布订阅模式
 public class Generators extends Thread implements Generator, Callable<String> {
     private Thread t;
-    private String GenName; // 不可变对象模式
+    private final String GenName; // 不可变对象模式
     private List<Cook> cooksList = new ArrayList<Cook>(); // 订阅者
 
     Generators(String name) {
