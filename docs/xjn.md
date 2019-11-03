@@ -1,8 +1,12 @@
 # DOC
 
-##  memento
+## 设计模式
+
+### memento
 
 Memento即备忘录模式，常用于保存一个对象的一种属性的状态。在undercook中，实现备忘录模式的class为menu，保存了menu的音量的信息。
+
+API：
 
 ```java
 public static void Save() {
@@ -11,11 +15,9 @@ public static void Save() {
 }
 ```
 
-​	
-
 运行Save()函数后，将音量保存至一个volSave静态变量中，完成对音量的保存，实现备忘录模式。
 
-## immutable
+### immutable
 
 在多线程编程中，不可变对象模式是保证**不用加锁实现线程安全**。具体的方法便是，在声明变量的时候使用`final`关键字，
 
@@ -23,9 +25,9 @@ public static void Save() {
 private final String GenName; // 不可变对象模式
 ```
 
-并且不定义setter函数，仅在构造函数时定义GenName的值。
+并且不定义setter函数，仅在构造函数时定义GenName的值。GenName为食材工厂生产的食材的名字，一经初始化就不能且不应该改变。
 
-## publish subscriber
+### publish subscriber
 
 发布订阅模式。其中，Generators是发布者，而Cooks为订阅者，Generators生产食材，并发布告知所有Cooks该食材生产好了。
 
@@ -34,6 +36,22 @@ Generators维护一个list存放所有订阅者
 ```java
 private List<Cook> cooksList = new ArrayList<Cook>(); // 订阅者
 ```
+
+且提供两个API：
+
+```java 
+public void addCook(Cook cook) {
+    cooksList.add(cook);
+}
+```
+
+```java
+public void deleteCook(Cook cook) {
+    cooksList.remove(cook);
+}
+```
+
+用于添加与删除订阅者。
 
 必要时，发布生产食材的信息给所有的订阅者。
 
@@ -46,9 +64,28 @@ for (Cook list : cooksList) {
 
 调用所有订阅者的函数UpdateMsg()。
 
-## future/promise
+完整的实现如下：
 
-多线程的实现方式有很多种，大多数的多线程设计模式都不能够返回返回值，但是future/promise模式可以
+```Java
+public void run() {
+    System.out.println("Running " + GenName);
+    try {
+        for (Cook list : cooksList) {
+            list.UpdateMsg(this.GenName);
+            Thread.sleep(50);
+        }
+    } catch (InterruptedException e) {
+        System.out.println("Thread " + GenName + " interrupted.");
+    }
+    System.out.println("Thread " + GenName + " exiting.");
+}	
+```
+
+此处因继承Thread而override函数run()（以及start()）。
+
+### future/promise
+
+多线程的实现方式有很多种，大多数的多线程设计模式都不能够返回返回值，（如上述的依靠实现run()而完成的多线程），但是future/promise模式可以。
 
 Java中实现future/promise模式可以靠实现接口Callable\<Type>的函数call()来实现。
 
@@ -64,3 +101,7 @@ public String call() throws Exception {
 ```
 
 这样就实现了UpdateMsg()之后还能将GenName返回的Java多线程编程。
+
+## 类图
+
+![许璟楠-DesignPattern](./许璟楠-DesignPattern.png)
