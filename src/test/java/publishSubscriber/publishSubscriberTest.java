@@ -10,7 +10,7 @@ class publishSubscriberTest {
     void main() {
         System.out.println("Test immutable");
 
-        Cooks cook1 = new Cooks("厨师1·");
+        Cooks cook1 = new Cooks("厨师1");
         Cooks cook2 = new Cooks("厨师2");
         Cooks cook3 = new Cooks("厨师3");
         Cooks cook4 = new Cooks("厨师4");

@@ -11,7 +11,7 @@ class futurePromiseTest {
     void main() {
         System.out.println("Test future/promise");
 
-        Cooks cook1 = new Cooks("厨师1·");
+        Cooks cook1 = new Cooks("厨师1");
         Cooks cook2 = new Cooks("厨师2");
         Cooks cook3 = new Cooks("厨师3");
         Cooks cook4 = new Cooks("厨师4");
@@ -31,6 +31,6 @@ class futurePromiseTest {
 
         gen1.start();
         FutureTask<String> ft = new FutureTask<>(gen2);
-        new Thread(ft).start();
+        var v = new Thread(ft).start();
     }
 }
