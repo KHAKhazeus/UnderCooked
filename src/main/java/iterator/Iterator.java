@@ -1,9 +1,9 @@
-package Iterator;
+package iterator;
 
 /*
-    Name: main.java.Iterator
+    Name: main.java.iterator
     Description:
-    main.java.Iterator, as a design pattern, can be used in various scenarios and
+    main.java.iterator, as a design pattern, can be used in various scenarios and
     Java Collections have already supported Iterators. Accordingly,
     self-implemented collections and iterators is rather useless since
     they can be replaced by currently available classes. Nevertheless

@@ -1,11 +1,10 @@
-package Iterator;
+package iterator;
 
 import Utils.Utils;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+class IteratorTest {
 
-class StrangersCollectionTest {
     @Test
     void main(){
         StrangersCollection coll = new StrangersCollection();
@@ -17,4 +16,5 @@ class StrangersCollectionTest {
         Utils.logger.debug("(" + this.toString() + ") : " + it.deduce());
         Utils.logger.debug("(" + this.toString() + ") : " + it.next().deduce());
     }
+
 }

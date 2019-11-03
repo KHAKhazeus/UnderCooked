@@ -1,6 +1,4 @@
-package Mediator;
-
-import java.util.ArrayList;
+package mediator;
 
 /*
     GrandMaster will be the mediator between different subdivisions

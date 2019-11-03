@@ -1,4 +1,4 @@
-package Mediator;
+package mediator;
 
 public interface Branch {
     GrandMaster grandMaster = null;

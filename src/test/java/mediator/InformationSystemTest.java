@@ -1,8 +1,6 @@
-package Mediator;
+package mediator;
 
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class InformationSystemTest {
     @Test

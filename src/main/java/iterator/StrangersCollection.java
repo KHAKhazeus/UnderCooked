@@ -1,4 +1,4 @@
-package Iterator;
+package iterator;
 
 import Utils.Utils;
 
@@ -56,7 +56,7 @@ public class StrangersCollection extends ConcreteCollectionWithInnerIterator{
         @Override
         public Stranger deduce(){
             if(cur < 0 || cur >= list.size()){
-                Utils.logger.error("(" + this.toString() + ") : " + "Wandering main.java.Iterator!");
+                Utils.logger.error("(" + this.toString() + ") : " + "Wandering main.java.iterator!");
                 System.exit(1);
                 return null;
             }

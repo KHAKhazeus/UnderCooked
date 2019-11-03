@@ -1,4 +1,4 @@
-package Iterator;
+package iterator;
 
 class Stranger{
     public Stranger(String name){

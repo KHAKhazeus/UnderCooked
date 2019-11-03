@@ -1,4 +1,4 @@
-package Iterator;
+package iterator;
 
 import Utils.Utils;
 
@@ -39,7 +39,7 @@ public class ConcreteCollectionWithInnerIterator implements Collection{
         @Override
         public Object deduce(){
             if(cur == null){
-                Utils.logger.error("(" + this.toString() + ") : " + "Wandering main.java.Iterator!");
+                Utils.logger.error("(" + this.toString() + ") : " + "Wandering main.java.iterator!");
                 System.exit(1);
                 return null;
             }
