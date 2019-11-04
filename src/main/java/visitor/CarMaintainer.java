@@ -8,17 +8,21 @@ public class CarMaintainer implements Visitor {
     public static final Logger logger = Utils.logger;
 
     public void visit(Wheel wheel) {
-        logger.info("Maintaining " + wheel.getName()
+        String prefix = String.format("(%s) : ", this.toString());
+        logger.info(prefix + "Maintaining " + wheel.getName()
                 + " wheel");
         logger.info(this);
     }
     public void visit(Engine engine) {
-        logger.info("Maintaining engine");
+        String prefix = String.format("(%s) : ", this.toString());
+        logger.info(prefix + "Maintaining engine");
     }
     public void visit(Body body) {
-        logger.info("Maintaining body");
+        String prefix = String.format("(%s) : ", this.toString());
+        logger.info(prefix + "Maintaining body");
     }
     public void visit(Car car) {
-        logger.info("Maintaining car");
+        String prefix = String.format("(%s) : ", this.toString());
+        logger.info(prefix + "Maintaining car");
     }
 }

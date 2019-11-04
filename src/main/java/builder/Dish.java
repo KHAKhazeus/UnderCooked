@@ -1,6 +1,7 @@
 package builder;
 
 
+import Utils.Utils;
 import com.google.common.base.Joiner;
 
 
@@ -27,6 +28,7 @@ public class Dish {
     }
 
     public void showInfo() {
+        String prefix = String.format("(%s) : ", this.toString());
         var ingredientsString = new ArrayList<String>();
         for (Ingredient ingredient : this.ingredients) {
             ingredientsString.add(String.format("%s %d克", ingredient.name, ingredient.weightGram));
@@ -40,10 +42,10 @@ public class Dish {
         String ingredients = Joiner.on("、").join(ingredientsString);
         String seasonings = Joiner.on("、").join(seasoningString);
 
-        System.out.println(String.format("菜名：%s", this.name));
-        System.out.println(String.format("食材：%s", ingredients));
-        System.out.println(String.format("调料：%s", seasonings));
-        System.out.println(String.format("烹饪方法：%s %.1f分钟", this.cookingMethod.getChineseName(), this.cookingTimeMinutes));
+        Utils.logger.info(prefix + String.format("菜名：%s", this.name));
+        Utils.logger.info(prefix + String.format("食材：%s", ingredients));
+        Utils.logger.info(prefix + String.format("调料：%s", seasonings));
+        Utils.logger.info(prefix + String.format("烹饪方法：%s %.1f分钟", this.cookingMethod.getChineseName(), this.cookingTimeMinutes));
     }
 
     public static class Builder {
