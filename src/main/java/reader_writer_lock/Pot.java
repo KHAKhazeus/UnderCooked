@@ -3,11 +3,13 @@ package reader_writer_lock;
 import java.util.Random;
 import Utils.Utils;
 
+// 多个线程竞争访问的共享区域
 public class Pot {
     private int content = new Random().nextInt();
     private Lock lock = new Lock();
 
     public void look() {
+        // 读上锁
         lock.readLock();
         Utils.logger.info("(" + this.toString() + "):" + "一个新的厨师正在观察锅");
         try {
@@ -17,12 +19,15 @@ public class Pot {
             e.printStackTrace();
         }
         finally {
+            // 返回读操作的内容
             Utils.logger.info("(" + this.toString() + "):" + String.valueOf(this.content));
+            // 读解锁
             lock.readUnlock();
         }
     }
 
     public void operate(int content) {
+        // 写上锁
         lock.writeLock();
         Utils.logger.info("(" + this.toString() + "):" + "一个新的厨师正在操作锅");
         try {
@@ -32,6 +37,7 @@ public class Pot {
         } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {
+            // 写解锁
             lock.writeUnlock();
         }
     }

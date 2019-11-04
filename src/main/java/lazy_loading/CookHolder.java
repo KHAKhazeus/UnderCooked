@@ -1,6 +1,7 @@
 package lazy_loading;
 import Utils.Utils;
 
+// 厨师职位
 public class CookHolder {
     private Cook cook;
 

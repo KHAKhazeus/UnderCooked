@@ -14,12 +14,14 @@ public abstract class Director {
         return level;
     }
 
+    // 设置上级主管
     public void setNext(Director next) {
         this.next = next;
     }
 
     protected abstract void cook();
 
+    // 处理订单
     public final void handleOrder(Order order) {
         // 如果可以处理就处理，不能处理则向后传递。
         if (this.level >= order.getLevel()) {

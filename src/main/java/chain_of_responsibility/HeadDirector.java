@@ -1,9 +1,11 @@
 package chain_of_responsibility;
 import Utils.Utils;
 
+// 顶级主管
 public class HeadDirector extends Director {
 
     public HeadDirector() {
+        // 调用父类构造函数传入等级
         super(2);
     }
 

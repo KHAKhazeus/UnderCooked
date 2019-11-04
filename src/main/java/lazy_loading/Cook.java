@@ -1,6 +1,7 @@
 package lazy_loading;
 import Utils.Utils;
 
+// 厨师(需要消耗大量资源的对象)
 public class Cook {
     public Cook() {
         Utils.logger.info("(" + this.toString() + "):" + "开始加载Cook");
