@@ -9,13 +9,13 @@ class FeatureToggleTest {
     void testGetWelcomeMessage() {
         Service service = new FeatureToggle();
 
-        final Player freePlayer = new Player("蔡徐坤");
-        final Player vipPlayer = new Player("卢本伟");
+//        final Player freePlayer = new Player("蔡徐坤");
+//        final Player vipPlayer = new Player("卢本伟");
 
-        PlayerGroup.addPlayerToFreeGroup(freePlayer);
-        PlayerGroup.addPlayerToVipGroup(vipPlayer);
-
-        service.showWelcomeMessage(freePlayer);
-        service.showWelcomeMessage(vipPlayer);
+//        PlayerGroup.addPlayerToFreeGroup(freePlayer);
+//        PlayerGroup.addPlayerToVipGroup(vipPlayer);
+//
+//        service.showWelcomeMessage(freePlayer);
+//        service.showWelcomeMessage(vipPlayer);
     }
 }
