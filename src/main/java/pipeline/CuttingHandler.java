@@ -8,7 +8,7 @@ public class CuttingHandler implements Handler<ShavedPotato, RawFries> {
 
     @Override
     public RawFries process(ShavedPotato input) {
-        LOGGER.info("(" + this.toString() + ") : " + "Cutting Handler is cutting potato");
+        LOGGER.info("(" + this.toString() + ") : " + "切土豆单元 将削好的土豆切成条");
         return new RawFries();
     }
 

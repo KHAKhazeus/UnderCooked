@@ -29,8 +29,8 @@ public class Car {
     private Engine  engine = new Engine();
     private Body    body   = new Body();
     private Wheel[] wheels
-            = { new Wheel("front left"), new Wheel("front right"),
-            new Wheel("back left") , new Wheel("back right")  };
+            = { new Wheel("左前"), new Wheel("右前"),
+            new Wheel("左后") , new Wheel("右后")  };
     void accept(Visitor visitor) {
         visitor.visit(this);
         engine.accept(visitor);

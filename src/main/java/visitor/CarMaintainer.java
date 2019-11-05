@@ -9,20 +9,20 @@ public class CarMaintainer implements Visitor {
 
     public void visit(Wheel wheel) {
         String prefix = String.format("(%s) : ", this.toString());
-        logger.info(prefix + "Maintaining " + wheel.getName()
-                + " wheel");
+        logger.info(prefix + "正在维护 " + wheel.getName()
+                + "轮");
         logger.info(this);
     }
     public void visit(Engine engine) {
         String prefix = String.format("(%s) : ", this.toString());
-        logger.info(prefix + "Maintaining engine");
+        logger.info(prefix + "正在维护引擎");
     }
     public void visit(Body body) {
         String prefix = String.format("(%s) : ", this.toString());
-        logger.info(prefix + "Maintaining body");
+        logger.info(prefix + "正在维护车身");
     }
     public void visit(Car car) {
         String prefix = String.format("(%s) : ", this.toString());
-        logger.info(prefix + "Maintaining car");
+        logger.info(prefix + "正在维护整车");
     }
 }

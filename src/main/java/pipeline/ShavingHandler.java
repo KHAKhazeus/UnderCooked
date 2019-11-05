@@ -8,7 +8,7 @@ public class ShavingHandler implements Handler<Potato, ShavedPotato> {
 
     @Override
     public ShavedPotato process(Potato input) {
-        LOGGER.info("(" + this.toString() + ") : " + "Shaving Handler is shaving potato");
+        LOGGER.info("(" + this.toString() + ") : " + "削土豆单元 削土豆");
         return new ShavedPotato();
     }
 }
