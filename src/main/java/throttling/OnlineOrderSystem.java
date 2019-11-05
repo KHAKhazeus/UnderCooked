@@ -29,7 +29,7 @@ public class OnlineOrderSystem{
     Queue<String> buffer = new LinkedList<String>();
 
     //接受消息，并将客户暂时加入黑名单，启动计时器屏蔽其这段时间的消息
-    void receiveMessage(String order, Customer from){
+    synchronized void receiveMessage(String order, Customer from){
         if (from != null && order != null && blackList.indexOf(from) == -1){
             buffer.offer(order);
             blackList.add(from);
