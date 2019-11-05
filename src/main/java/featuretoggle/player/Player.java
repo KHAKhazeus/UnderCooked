@@ -1,14 +1,16 @@
 package featuretoggle.player;
 
-
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-
 /**
  * 游戏玩家类
  */
-@AllArgsConstructor
-@Getter
 public class Player {
     private String name;
+
+    public Player(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
 }
