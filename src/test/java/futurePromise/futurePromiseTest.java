@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class futurePromiseTest {
     @Test
     void main() {
-        System.out.println("Test future/promise");
+        System.out.println("Testing future/promise");
 
         Cooks cook1 = new Cooks("厨师1");
         Cooks cook2 = new Cooks("厨师2");

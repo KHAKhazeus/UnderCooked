@@ -1,4 +1,4 @@
-package publishSubscriber;
+package publishSubscribe;
 // 食材工厂接口的实现
 // 设计模式:
 // 发布订阅模式(pub-sub)
@@ -17,7 +17,7 @@ public class Generators extends Thread implements Generator, Callable<String> {
 
     Generators(String name) {
         GenName = name;
-        System.out.println("Creating " + GenName);
+        System.out.println( "Generators:Generators:("+ this.toString()+ "):Creating immutable" + GenName);
     }
 
     public void addCook(Cook cook) {
@@ -33,26 +33,27 @@ public class Generators extends Thread implements Generator, Callable<String> {
     @Override
     public String call() throws Exception {
         for (Cook list : cooksList) {
+            System.out.println("GenName:call:("+ this.toString() +"):future promise call");
             list.UpdateMsg(this.GenName);
         }
         return GenName;
     }
 
     public void run() {
-        System.out.println("Running " + GenName);
+        System.out.println( "GenName:run:("+this.toString() +"):Running " + GenName);
         try {
             for (Cook list : cooksList) {
                 list.UpdateMsg(this.GenName);
                 Thread.sleep(50);
             }
         } catch (InterruptedException e) {
-            System.out.println("Thread " + GenName + " interrupted.");
+            System.out.println("GenName:run:("+ this.toString() +"):Thread " + GenName + " interrupted.");
         }
-        System.out.println("Thread " + GenName + " exiting.");
+        System.out.println("GenName:run:("+ this.toString() +"):Thread " + GenName + " exiting.");
     }
 
     public void start() {
-        System.out.println("Starting " + GenName);
+        System.out.println("GenName:start:("+ this.toString() +"):Starting " + GenName);
         if (t == null) {
             t = new Thread(this, GenName);
             t.start();

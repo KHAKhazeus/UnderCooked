@@ -1,4 +1,4 @@
-package publishSubscriber;
+package publishSubscribe;
 // Cook 接口的实现
 
 public class Cooks implements Cook {
@@ -11,7 +11,7 @@ public class Cooks implements Cook {
     @Override
     public void UpdateMsg(String msg) {
         if (!"".equals(msg)) {
-            System.out.println(name + ": get " + msg);
+            System.out.println("Cooks:UpdateMsg:("+ this.toString()+"):" + name + ": get " + msg);
         }
     }
 }

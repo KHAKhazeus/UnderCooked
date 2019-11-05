@@ -4,12 +4,12 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class mementoTest {
+class MementoTest {
     @Test
     void main(){
-        System.out.println("Test memento:");
-        var memento = new menu();
-        menu.Volume(20);
-        menu.Save();
+        System.out.println("Testing memento:");
+        var memento = new Menu();
+        memento.Volume(20);
+        memento.Save();
     }
 }

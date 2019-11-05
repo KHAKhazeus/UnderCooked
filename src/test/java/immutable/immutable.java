@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class immutableTest {
     @Test
     void main() {
-        System.out.println("Test immutable");
+        System.out.println("Testing immutable");
 
         Cooks cook1 = new Cooks("厨师1");
         Cooks cook2 = new Cooks("厨师2");
