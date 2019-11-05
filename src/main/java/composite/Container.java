@@ -33,7 +33,7 @@ public class Container extends Item {
         Utils.logger.info("("+this.toString()+")"+" : ");
         if(item.setParent(this)){
             itemList.add(item);
-            System.out.println(this.getName()+" 被加入到Container中.");
+            System.out.println(this.getName()+" 被加入到容器中.");
             return item;
         }
         else{
