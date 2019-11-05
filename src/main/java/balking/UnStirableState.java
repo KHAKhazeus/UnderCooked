@@ -39,7 +39,7 @@ public class UnStirableState implements FlourState {
      */
     @Override
     public void stir() {
-        System.out.println("UnStirableState:stir:("+this.toString()+"):Stirring is not allowed, because flour is in UnStirableState ");
+        System.out.println("UnStirableState: stir: ("+this.toString()+"): 面粉在不可搅拌状态下不能被搅拌 ");
     }
 
 
@@ -51,6 +51,6 @@ public class UnStirableState implements FlourState {
      */
     @Override
     public void addEgg() {
-        System.out.println("UnStirableState:addEgg:("+this.toString()+"):You can't add eggs because flour is in UnStirableState.");
+        System.out.println("UnStirableState: addEgg: ("+this.toString()+"): 面粉在不可搅拌状态下不能加入鸡蛋.");
     }
 }

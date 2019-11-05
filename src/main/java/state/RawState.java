@@ -39,7 +39,7 @@ public class RawState implements ChickenState {
      */
     @Override
     public void cut() {
-        System.out.println("RawState:cut:("+this.toString()+"):Chicken has been cut and change into CutState");
+        System.out.println("RawState: cut: ("+this.toString()+"): 鸡肉开始被切，并且鸡肉状态变为CutState(切好)状态");
         chicken.setState(chicken.CutState);
     }
 
@@ -51,6 +51,6 @@ public class RawState implements ChickenState {
      */
     @Override
     public void fry() {
-            System.out.println("RawState:fry:("+this.toString()+"):RawState chicken can't be fried. It's still in RawState, Cut it first.");
+            System.out.println("RawState: fry: ("+this.toString()+"): 没切的鸡肉不能直接煎. 鸡肉仍处于RawState(原始)状态.");
     }
 }

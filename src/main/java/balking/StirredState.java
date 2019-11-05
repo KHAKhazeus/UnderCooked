@@ -39,7 +39,7 @@ public class StirredState implements FlourState {
      */
     @Override
     public void stir() {
-        System.out.println("StirredState:stir:("+this.toString()+"):Stirring is finished. You can't stir again");
+        System.out.println("StirredState:stir: ("+this.toString()+"): 面粉已经搅拌好了，不需要再搅拌");
         flour.setState(flour.UnStirableState);
     }
 
@@ -52,6 +52,6 @@ public class StirredState implements FlourState {
      */
     @Override
     public void addEgg() {
-        System.out.println("StirredState:addEgg:("+this.toString()+"):You can add an egg into flour, because the flour is in StirredState");
+        System.out.println("StirredState: addEgg: ("+this.toString()+"): 搅拌好的面粉里加入了一个鸡蛋");
     }
 }

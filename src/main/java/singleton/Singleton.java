@@ -13,9 +13,9 @@ public class Singleton {
         Clock clock1 = Clock.getInstance();
         Clock clock2 = Clock.getInstance();
         if(clock1 ==  clock2) {
-            System.out.println("Clock:getInstance:("+clock1.toString()+"):clock1 and clock2 are the same instance.");
+            System.out.println("Clock: getInstance: ("+clock1.toString()+"): 创建的第一个时钟和第二个时钟其实是同一个实例.");
         } else {
-            System.out.println("Clock:getInstance:("+clock1.toString()+"):clock1 and clock2 are not the same instance.");
+            System.out.println("Clock: getInstance: ("+clock1.toString()+"): 创建的第一个时钟和第二个时钟不是同一个实例.");
         }
     }
 }
