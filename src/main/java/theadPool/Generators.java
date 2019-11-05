@@ -1,4 +1,4 @@
-package immutable;
+package theadPool;
 // 食材工厂接口的实现
 // 设计模式:
 // 发布订阅模式(pub-sub)

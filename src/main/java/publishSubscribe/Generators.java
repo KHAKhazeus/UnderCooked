@@ -1,4 +1,4 @@
-package publishSubscribe;
+package futurePromise;
 // 食材工厂接口的实现
 // 设计模式:
 // 发布订阅模式(pub-sub)
@@ -8,16 +8,18 @@ package publishSubscribe;
 import java.util.ArrayList;
 import java.util.concurrent.Callable;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 
 // 发布订阅模式
-public class Generators extends Thread implements Generator, Callable<String> {
-    private Thread t;
+public class Generators implements Generator, Callable<String> {
     private final String GenName; // 不可变对象模式
     private List<Cook> cooksList = new ArrayList<Cook>(); // 订阅者
 
     Generators(String name) {
         GenName = name;
-        System.out.println( "Generators:Generators:("+ this.toString()+ "):初始化不可变对象" + GenName);
+        System.out.println( "Generators:Generators:("+ this.toString()+ "):Creating immutable" + GenName);
     }
 
     public void addCook(Cook cook) {
@@ -32,31 +34,30 @@ public class Generators extends Thread implements Generator, Callable<String> {
     // Future/Promise 模式
     @Override
     public String call() throws Exception {
+        System.out.println("GenName:call:("+ this.toString() +"):future promise call");
         for (Cook list : cooksList) {
-            System.out.println("GenName:call:("+ this.toString() +"):future promise模式启动");
             list.UpdateMsg(this.GenName);
         }
         return GenName;
     }
 
-    public void run() {
-        System.out.println( "GenName:run:("+this.toString() +"):运行" + GenName);
-        try {
-            for (Cook list : cooksList) {
-                list.UpdateMsg(this.GenName);
-                Thread.sleep(50);
+    public void notifyAll(int max) {
+        System.out.println("GenName:call:("+ this.toString() +"):thead pool");
+        ExecutorService service = Executors.newFixedThreadPool(max);
+        service.submit(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    for (Cook list : cooksList) {
+                        list.UpdateMsg(GenName);
+                        Thread.sleep(50);
+                    }
+                } catch (InterruptedException e) {
+                    System.out.println("GenName:notifyAll:("+ this.toString() +"):Thread " + GenName + " interrupted.");
+                }
+                System.out.println("GenName:notifyAll:("+ this.toString() +"):Thread " + GenName + " exiting.");
             }
-        } catch (InterruptedException e) {
-            System.out.println("GenName:run:("+ this.toString() +"):线程" + GenName + "中止");
-        }
-        System.out.println("GenName:run:("+ this.toString() +"):线程" + GenName + "退出");
-    }
-
-    public void start() {
-        System.out.println("GenName:start:("+ this.toString() +"):启动" + GenName);
-        if (t == null) {
-            t = new Thread(this, GenName);
-            t.start();
-        }
+        });
+        service.shutdownNow();
     }
 }

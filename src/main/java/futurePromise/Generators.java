@@ -8,10 +8,12 @@ package futurePromise;
 import java.util.ArrayList;
 import java.util.concurrent.Callable;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 
 // 发布订阅模式
-public class Generators extends Thread implements Generator, Callable<String> {
-    private Thread t;
+public class Generators implements Generator, Callable<String> {
     private final String GenName; // 不可变对象模式
     private List<Cook> cooksList = new ArrayList<Cook>(); // 订阅者
 
@@ -32,31 +34,30 @@ public class Generators extends Thread implements Generator, Callable<String> {
     // Future/Promise 模式
     @Override
     public String call() throws Exception {
+        System.out.println("GenName:call:("+ this.toString() +"):future promise call");
         for (Cook list : cooksList) {
-            System.out.println("GenName:call:("+ this.toString() +"):future promise call");
             list.UpdateMsg(this.GenName);
         }
         return GenName;
     }
 
-    public void run() {
-        System.out.println( "GenName:run:("+this.toString() +"):Running " + GenName);
-        try {
-            for (Cook list : cooksList) {
-                list.UpdateMsg(this.GenName);
-                Thread.sleep(50);
+    public void notifyAll(int max) {
+        System.out.println("GenName:call:("+ this.toString() +"):thead pool");
+        ExecutorService service = Executors.newFixedThreadPool(max);
+        service.submit(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    for (Cook list : cooksList) {
+                        list.UpdateMsg(GenName);
+                        Thread.sleep(50);
+                    }
+                } catch (InterruptedException e) {
+                    System.out.println("GenName:notifyAll:("+ this.toString() +"):Thread " + GenName + " interrupted.");
+                }
+                System.out.println("GenName:notifyAll:("+ this.toString() +"):Thread " + GenName + " exiting.");
             }
-        } catch (InterruptedException e) {
-            System.out.println("GenName:run:("+ this.toString() +"):Thread " + GenName + " interrupted.");
-        }
-        System.out.println("GenName:run:("+ this.toString() +"):Thread " + GenName + " exiting.");
-    }
-
-    public void start() {
-        System.out.println("GenName:start:("+ this.toString() +"):Starting " + GenName);
-        if (t == null) {
-            t = new Thread(this, GenName);
-            t.start();
-        }
+        });
+        service.shutdownNow();
     }
 }
