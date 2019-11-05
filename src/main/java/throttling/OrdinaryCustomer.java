@@ -23,7 +23,7 @@ public class OrdinaryCustomer implements Customer, Runnable{
 
     //下订单
     @Override
-    public void placeOrder(String order) {
+    synchronized public void placeOrder(String order) {
         order += new Timestamp(System.currentTimeMillis());
         commonSystem.receiveMessage(order, this);
     }

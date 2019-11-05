@@ -64,25 +64,6 @@ for (Cook list : cooksList) {
 
 调用所有订阅者的函数UpdateMsg()。
 
-完整的实现如下：
-
-```Java
-public void run() {
-    System.out.println("Running " + GenName);
-    try {
-        for (Cook list : cooksList) {
-            list.UpdateMsg(this.GenName);
-            Thread.sleep(50);
-        }
-    } catch (InterruptedException e) {
-        System.out.println("Thread " + GenName + " interrupted.");
-    }
-    System.out.println("Thread " + GenName + " exiting.");
-}	
-```
-
-此处因继承Thread而override函数run()（以及start()）。
-
 ### future/promise
 
 多线程的实现方式有很多种，大多数的多线程设计模式都不能够返回返回值，（如上述的依靠实现run()而完成的多线程），但是future/promise模式可以。
@@ -101,6 +82,38 @@ public String call() throws Exception {
 ```
 
 这样就实现了UpdateMsg()之后还能将GenName返回的Java多线程编程。
+
+## 线程池
+
+线程池是多线程的一种设计模式。
+
+单纯的继承Thread的缺点很多，所以使用线程池模式来控制并发数。
+
+实现线程池模式的API为notifyAll()
+
+```java
+public void notifyAll(int max) {
+    System.out.println("GenName:call:("+ this.toString() +"):thead pool");
+    ExecutorService service = Executors.newFixedThreadPool(max);
+    service.submit(new Runnable() {
+        @Override
+        public void run() {
+            try {
+                for (Cook list : cooksList) {
+                    list.UpdateMsg(GenName);
+                    Thread.sleep(50);
+                }
+            } catch (InterruptedException e) {
+                System.out.println("GenName:notifyAll:("+ this.toString() +"):Thread " + GenName + " interrupted.");
+            }
+            System.out.println("GenName:notifyAll:("+ this.toString() +"):Thread " + GenName + " exiting.");
+        }
+    });
+    service.shutdownNow();
+}
+```
+
+
 
 ## 类图
 
