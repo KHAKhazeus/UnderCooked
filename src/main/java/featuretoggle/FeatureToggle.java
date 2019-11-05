@@ -16,9 +16,9 @@ public class FeatureToggle implements Service {
     @Override
     public void showWelcomeMessage(Player player) {
         if (PlayerGroup.isVip(player)) {
-            LOGGER.info("(" + this.toString() + ") : " +  String.format("睾贵的心悦会员 %s 您好，欢迎来到UnderCooked!", player.getName()));
+            LOGGER.info("(" + this.toString() + ") : " +  String.format("*贵的心悦会员 %s 您好，欢迎来到UnderCooked!", player.getName()));
         } else {
-            LOGGER.info("(" + this.toString() + ") : " +  String.format("%s，没钱玩你妈逼！", player.getName()));
+            LOGGER.info("(" + this.toString() + ") : " +  String.format("%s，没钱玩你**！", player.getName()));
         }
     }
 }
