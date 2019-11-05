@@ -38,7 +38,7 @@ public class OverCookedState implements ChickenState {
      */
     @Override
     public void fry() {
-        System.out.println("OverCookedState:fry:("+this.toString()+"):Chicken has been OverCooked, you could remove it.");
+        System.out.println("OverCookedState: fry: ("+this.toString()+"): 鸡肉已经被煎糊了, 你可以丢掉了.");
     }
 
     /**
@@ -49,7 +49,7 @@ public class OverCookedState implements ChickenState {
      */
     @Override
     public void cut() {
-        System.out.println("OverCookedState:cut:("+this.toString()+"):Chicken has been OverCooked, you could remove it.");
+        System.out.println("OverCookedState: cut: ("+this.toString()+"): 鸡肉已经被煮糊了, 你可以丢掉了.");
     }
 }
 

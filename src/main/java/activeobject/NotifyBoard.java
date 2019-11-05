@@ -51,7 +51,7 @@ public class NotifyBoard {
             @Override
             public void run() {
                 exit = true;
-                System.out.println("NotifyBoard:shutDownNotifyBoard:("+this.toString()+"):NotifyBoard has been shut down");
+                System.out.println("NotifyBoard: shutDownNotifyBoard: ("+this.toString()+"): 公告牌已关闭");
             }
         });
     }
@@ -67,7 +67,7 @@ public class NotifyBoard {
             @Override
             public void run() {
                 message = notify;
-                System.out.println("NotifyBoard:changeNotifyBoard:("+this.toString()+"):NotifyBoard says:"+message);
+                System.out.println("NotifyBoard: changeNotifyBoard: ("+this.toString()+"): 公告牌显示:"+message);
             }
         });
     }
@@ -82,8 +82,8 @@ public class NotifyBoard {
         dispatchQueue.put(new Runnable() {
             @Override
             public void run() {
-                message="nothing";
-                System.out.println("NotifyBoard:clearNotifyBoard:("+this.toString()+"):NotifyBoard says:"+message);
+                message="空";
+                System.out.println("NotifyBoard: clearNotifyBoard: ("+this.toString()+"): 公告牌显示为:"+message);
             }
         });
     }

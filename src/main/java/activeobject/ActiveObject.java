@@ -16,7 +16,7 @@ public class ActiveObject {
          * 发布公告
          */
         try {
-            notifyBoard.changeNotifyBoard("Watch out the time!");
+            notifyBoard.changeNotifyBoard("时间快到了，抓紧上菜!");
 
         }catch (InterruptedException e){
             e.printStackTrace();

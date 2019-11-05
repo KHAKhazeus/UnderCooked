@@ -16,9 +16,9 @@ public class BindingProperties {
         /**
          * 打印此刻两个巧克力蛋糕的收益
          */
-        System.out.println("ChocolateCake:getIncome:("+chocolateCake1.toString()+"):Because chocolateCake1 is in the order, so the income of chocklateCake1 is "
+        System.out.println("ChocolateCake: getIncome: ("+chocolateCake1.toString()+"): 因为第一个巧克力蛋糕在订单里, 所以此时第一个巧克力蛋糕的收益为 "
                 +Integer.toString(chocolateCake1.getIncome()));
-        System.out.println("ChocolateCake:getIncome:("+chocolateCake2.toString()+"):Because chocolateCake2 is not in the order, so the income of chocklateCake2 is "
+        System.out.println("ChocolateCake: getIncome: ("+chocolateCake2.toString()+"): 因为第二个巧克力蛋糕不在订单里, 所以此时第二个巧克力蛋糕的收益为 "
                 +Integer.toString(chocolateCake2.getIncome()));
 
         /**
@@ -30,9 +30,9 @@ public class BindingProperties {
         /**
          * 打印此刻两个巧克力蛋糕的收益
          */
-        System.out.println("ChocolateCake:getIncome:("+chocolateCake1.toString()+"):Because chocolateCake1 is removed from the order, so the income of chocklateCake1 is "
+        System.out.println("ChocolateCake: getIncome: ("+chocolateCake1.toString()+"): 因为第一个巧克力蛋糕从订单中取消了, 所以此刻第一个巧克力蛋糕的收益为 "
                 +Integer.toString(chocolateCake1.getIncome()));
-        System.out.println("ChocolateCake:getIncome:("+chocolateCake2.toString()+"):Because chocolateCake2 is added into the order, so the income of chocklateCake2 is "
+        System.out.println("ChocolateCake: getIncome: ("+chocolateCake2.toString()+"): 因为第二个巧克力蛋糕加到订单里了, 所以此时第二个巧克力蛋糕的收益为 "
                 +Integer.toString(chocolateCake2.getIncome()));
     }
 }
