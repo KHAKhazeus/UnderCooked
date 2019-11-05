@@ -18,9 +18,9 @@ public class Mediator {
         procurement.register(master);
         reception.register(master);
         //信息传递
-        kitchen.inputMessage("Chicken Ready!");
-        procurement.inputMessage("Ingredients Ready!");
-        reception.inputMessage("Customers arrived and new order has come!");
+        kitchen.inputMessage("鸡翅准备好了!");
+        procurement.inputMessage("食材采购完毕!");
+        reception.inputMessage("客人到了，并且已经点餐!");
 
     }
 }

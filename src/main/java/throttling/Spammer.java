@@ -30,14 +30,14 @@ public class Spammer implements Customer, Runnable {
     //恶意用户每0.2秒发送一个请求
     @Override
     public void run() {
-        String order = "Spammer ordered Nothing! Hahaha!";
+        String order = "恶意客户根本就没订购任何东西！哈哈哈哈哈！";
         while(flag){
             placeOrder(order);
             try{
                 Thread.sleep(200);
             }
             catch (Exception e){
-                Utils.logger.error("(" + this.toString() + ") : " + "Got an error because of Thread.Sleep");
+                Utils.logger.error("(" + this.toString() + ") : " + "Thread.Sleep错误");
                 System.exit(1);
             }
         }

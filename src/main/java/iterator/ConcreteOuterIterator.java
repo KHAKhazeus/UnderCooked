@@ -23,27 +23,27 @@ public class ConcreteOuterIterator implements Iterator{
     //剩余参考ConcreteCollectionWithInnerIterator中的迭代器定义即可
     @Override
     public Boolean hasNext() {
-        Utils.logger.info("(" + this.toString() + ") : " + "found another one!");
+        Utils.logger.info("(" + this.toString() + ") : " + "找到了下一个!");
         return true;
     }
 
     @Override
     public Iterator next(){
         if (hasNext()){
-            Utils.logger.info("(" + this.toString() + ") : " + "got another one, returning");
+            Utils.logger.info("(" + this.toString() + ") : " + "返回下一个");
             Object data = collection.getData();
             cur = data;
             if (data != null){
-                Utils.logger.info("(" + this.toString() + ") : " + "Data Returned by ConcreteInnerIterator");
+                Utils.logger.info("(" + this.toString() + ") : " + "ConcreteOuterIterator 已经指向下一个数据");
             }
             else{
-                Utils.logger.error("(" + this.toString() + ") : " + "ConcreteCollectionWithInnerIterator Failure");
+                Utils.logger.error("(" + this.toString() + ") : " + "ConcreteCollection 出错");
                 System.exit(1);
             }
             return this;
         }
         else{
-            Utils.logger.info("(" + this.toString() + ") : " + "no other elements!");
+            Utils.logger.info("(" + this.toString() + ") : " + "没有其他元素了！!");
             return null;
         }
     }
@@ -51,12 +51,12 @@ public class ConcreteOuterIterator implements Iterator{
     @Override
     public Object deduce(){
         if(cur == null){
-            Utils.logger.error("(" + this.toString() + ") : " + "Wandering main.java.iterator!");
+            Utils.logger.error("(" + this.toString() + ") : " + "空迭代器!");
             System.exit(1);
             return null;
         }
         else{
-            Utils.logger.info("(" + this.toString() + ") : " + "Successfully deduced!");
+            Utils.logger.info("(" + this.toString() + ") : " + "成功解析!");
             return cur;
         }
     }

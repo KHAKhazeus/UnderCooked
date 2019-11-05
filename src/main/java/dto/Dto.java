@@ -9,17 +9,17 @@ public class Dto {
 
         //新的物料
         Ingredient cabage = new Ingredient();
-        cabage.name = "cabage";
-        cabage.cookingMethod = "boil";
+        cabage.name = "卷心菜";
+        cabage.cookingMethod = "煮";
         cabage.kilogram = 1;
         Ingredient meat = new Ingredient();
-        meat.name = "raw meat";
-        meat.cookingMethod = "deep fry";
+        meat.name = "生猪肉";
+        meat.cookingMethod = "炸";
         meat.kilogram = 2;
         Preprocessing preprocessingLine = new Preprocessing();
         RobotChef chef = new RobotChef();
         preprocessingLine.establishPipe(chef);
         //预处理之后再递送到厨师手上
-        preprocessingLine.preprocess("FoodKing", cabage, meat);
+        preprocessingLine.preprocess("食物之王", cabage, meat);
     }
 }

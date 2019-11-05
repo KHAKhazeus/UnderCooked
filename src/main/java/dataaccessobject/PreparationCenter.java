@@ -19,8 +19,8 @@ public class PreparationCenter {
     private String ingredientToString(ArrayList<Ingredient> ingredients) {
         StringBuilder builder = new StringBuilder();
         for (Ingredient ingredient: ingredients){
-            builder.append("Ingredient Name: ").append(ingredient.name).append("; Weight: ").append(ingredient.kilogram)
-                    .append(" kg; ").append("preferredMethod: ").append(ingredient.cookingMethod).append("\n");
+            builder.append("食材名: ").append(ingredient.name).append("; 重量: ").append(ingredient.kilogram)
+                    .append(" 千克; ").append("加工方法: ").append(ingredient.cookingMethod).append("\n");
         }
         return builder.toString();
     }
@@ -28,7 +28,7 @@ public class PreparationCenter {
     //拿取之前预定的物料
     void fetchNextBatch(){
         ArrayList<Ingredient> result = porter.getIngredients();
-        Utils.logger.info("(" + this.toString() + ") : " + "Getting Ingredients: " + ingredientToString(result));
+        Utils.logger.info("(" + this.toString() + ") : " + "获得食材: " + ingredientToString(result));
         porter.clearStock();
     }
 }

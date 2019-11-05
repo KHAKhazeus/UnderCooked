@@ -12,7 +12,7 @@ abstract public class InformationSystem<INFOTYPE> implements Branch{
     @Override
     public void receiveGrandMaster(Object msg, Object... args) {
         //assume that grandmaster is dependable
-        Utils.logger.info('(' + this.toString() + ") : " + "received message: " + " " + args[1].toString() + " " +msg.toString());
+        Utils.logger.info('(' + this.toString() + ") : " + "收到消息，来自: " + " " + args[1].toString() + "消息: " +msg.toString());
     }
 
     //绑定总控系统
@@ -22,7 +22,7 @@ abstract public class InformationSystem<INFOTYPE> implements Branch{
             master.addToBranches(this);
         }
         if (!(master instanceof InformationMaster)){
-            Utils.logger.error('(' + this.toString() + ") : " + "register grandmaster failure, type not correct, got type: " + master.getClass());
+            Utils.logger.error('(' + this.toString() + ") : " + "总控注册失败，不是正确的类型: " + master.getClass());
         }
         else{
             grandMaster = (InformationMaster<INFOTYPE>) master;
@@ -33,11 +33,11 @@ abstract public class InformationSystem<INFOTYPE> implements Branch{
     @Override
     public void unregister() {
         if (grandMaster == null){
-            Utils.logger.info('(' + this.toString() + ") : " + "cannot remove grandmaster due to null");
+            Utils.logger.info('(' + this.toString() + ") : " + "不能移除总控，因为没有总控");
         }
         else{
             grandMaster.removeFromBranches(this);
-            Utils.logger.info('(' + this.toString() + ") : " + "successfully removed grandmaster");
+            Utils.logger.info('(' + this.toString() + ") : " + "成功与总控解绑");
         }
 
     }
