@@ -1,14 +1,13 @@
-package publishSubscribe;
+package immutable;
+
 import java.util.concurrent.FutureTask;
 
-import org.junit.jupiter.api.Test;
+public class Immutable {
+    public static void test() {
 
-import static org.junit.jupiter.api.Assertions.*;
-
-class publishSubscribeTest {
-    @Test
-    void main() {
-        System.out.println("Testing publishSubscribe");
+        System.out.println("===========================");
+        System.out.println("Testing Immutable:");
+        System.out.println("===========================");
 
         Cooks cook1 = new Cooks("厨师1");
         Cooks cook2 = new Cooks("厨师2");

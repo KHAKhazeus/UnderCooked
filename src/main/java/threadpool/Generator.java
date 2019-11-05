@@ -1,4 +1,4 @@
-package publishSubscribe;
+package threadpool;
 // 食材工厂接口
 
 public interface Generator {

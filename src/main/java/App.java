@@ -23,7 +23,6 @@ import futurepromise.FuturePromise;
 import immutable.Immutable;
 import interpreter.Interpreter;
 import iterator.Iter;
-import iterator.Iterator;
 import lazyloading.LazyLoading;
 import mediator.Mediator;
 import memento.Memento;
@@ -34,12 +33,13 @@ import objectmother.ObjectMother;
 import pipeline.Pipeli;
 import prototype.Prototype;
 import proxy.Proxy;
-import publishsubscriber.PublishSubscriber;
+import publishsubscribe.PublishSubscribe;
 import readerwriterlock.ReaderWriterLock;
 import singleton.Singleton;
 import specification.Specific;
 import state.State;
 import templatemethod.TemplateMethod;
+import threadpool.ThreadPool;
 import throttling.Throttling;
 import transferobject.TransferObject;
 import visitor.Visit;
@@ -91,9 +91,10 @@ public class App {
         System.out.println("    39. Specification      ");
         System.out.println("    40. State              ");
         System.out.println("    41. Template Method    ");
-        System.out.println("    42. Throttling         ");
-        System.out.println("    43. Transfer Object    ");
-        System.out.println("    44. Visitor            ");
+        System.out.println("    42. Thread Pool        ");
+        System.out.println("    43. Throttling         ");
+        System.out.println("    44. Transfer Object    ");
+        System.out.println("    45. Visitor            ");
 
         System.out.println("===========================");
         Scanner scanner = new Scanner(System.in);
@@ -208,7 +209,7 @@ public class App {
                     Proxy.test();
                     break;
                 case 36:
-                    PublishSubscriber.test();
+                    PublishSubscribe.test();
                     break;
                 case 37:
                     ReaderWriterLock.test();
@@ -226,12 +227,15 @@ public class App {
                     new TemplateMethod().test();
                     break;
                 case 42:
-                    new Throttling().test();
+                    ThreadPool.test();
                     break;
                 case 43:
-                    TransferObject.test();
+                    new Throttling().test();
                     break;
                 case 44:
+                    TransferObject.test();
+                    break;
+                case 45:
                     Visit.test();
                     break;
             }

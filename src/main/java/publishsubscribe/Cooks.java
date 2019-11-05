@@ -1,4 +1,4 @@
-package publishSubscribe;
+package publishsubscribe;
 // Cook 接口的实现
 
 public class Cooks implements Cook {
