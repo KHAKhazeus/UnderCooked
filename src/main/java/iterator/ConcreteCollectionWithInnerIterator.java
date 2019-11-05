@@ -13,7 +13,7 @@ public class ConcreteCollectionWithInnerIterator implements Collection{
         //查看是否还有元素，由于大类并不是真正能向用户开放使用的类（没有存储能力），因此此处只是模拟
         @Override
         public Boolean hasNext() {
-            Utils.logger.info("(" + this.toString() + ") : " + "found another one!");
+            Utils.logger.info("(" + this.toString() + ") : " + "找到了下一个!");
             return true;
         }
 
@@ -21,24 +21,24 @@ public class ConcreteCollectionWithInnerIterator implements Collection{
         @Override
         public Iterator next(){
             if (hasNext()){
-                Utils.logger.info("(" + this.toString() + ") : " + "got another one, returning");
+                Utils.logger.info("(" + this.toString() + ") : " + "返回下一个");
                 //调用父类的方法获取数据
                 Object data = getData();
                 cur = data;
                 //取出数据出错
                 if (data != null){
-                    Utils.logger.info("(" + this.toString() + ") : " + "Data Returned by ConcreteInnerIterator");
+                    Utils.logger.info("(" + this.toString() + ") : " + "ConcreteInnerIterator 已经指向下一个数据");
                     return this;
                 }
                 else{
                     //经过hasNext检查仍然出错
-                    Utils.logger.error("(" + this.toString() + ") : " + "ConcreteCollectionWithInnerIterator Failure");
+                    Utils.logger.error("(" + this.toString() + ") : " + "ConcreteCollectionWithInnerIterator 出错");
                     System.exit(1);
                     return null;
                 }
             }
             else{
-                Utils.logger.info("(" + this.toString() + ") : " + "no other elements!");
+                Utils.logger.info("(" + this.toString() + ") : " + "没有其他元素了！!");
                 return null;
             }
         }
@@ -48,12 +48,12 @@ public class ConcreteCollectionWithInnerIterator implements Collection{
         public Object deduce(){
             //检查当前的迭代器是否为游荡的迭代器
             if(cur == null){
-                Utils.logger.error("(" + this.toString() + ") : " + "Wandering main.java.iterator!");
+                Utils.logger.error("(" + this.toString() + ") : " + "空迭代器!");
                 System.exit(1);
                 return null;
             }
             else{
-                Utils.logger.info("(" + this.toString() + ") : " + "Successfully deduced!");
+                Utils.logger.info("(" + this.toString() + ") : " + "成功解析!");
                 return cur;
             }
         }

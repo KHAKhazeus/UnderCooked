@@ -16,14 +16,14 @@ public class Preprocessing {
     //进行处理，所有食材和订单人传入预处理处
     void preprocess(String orderedBy, Ingredient... ingredients){
         //making package
-        Utils.logger.info("(" + this.toString() + ") : " + "Got order from: " + orderedBy);
-        Utils.logger.info("(" + this.toString() + ") : " + "Start Packaging and Preprocessing");
+        Utils.logger.info("(" + this.toString() + ") : " + "订单人: " + orderedBy);
+        Utils.logger.info("(" + this.toString() + ") : " + "开始打包和预处理");
         FoodPackage pack = new FoodPackage();
         pack.setOrderer(orderedBy);
         for (Ingredient ingredient: ingredients){
             pack.pushIngredient(ingredient);
         }
-        Utils.logger.info("(" + this.toString() + ") : " + "get ingredients: \n" + pack.ingredientToString());
+        Utils.logger.info("(" + this.toString() + ") : " + "得到食材: \n" + pack.ingredientToString());
         //add timestamp
         pack.setPreprocessedTime(new Timestamp(System.currentTimeMillis()));
         sendPackage(chef, pack);

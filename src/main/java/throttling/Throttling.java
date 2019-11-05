@@ -32,7 +32,7 @@ public class Throttling {
             system.outputThread.join();
         }
         catch (Exception e){
-            Utils.logger.error("(" + this.toString() + ")" + " : " + "extending lifecycle failed!");
+            Utils.logger.error("(" + this.toString() + ")" + " : " + "无法延长主函数的生命周期，出错！");
         }
     }
 

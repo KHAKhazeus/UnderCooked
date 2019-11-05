@@ -29,13 +29,13 @@ public class ConcreteCollection implements Collection{
     //模拟插入新数据
     public void insert(Object thing) {
         data = thing;
-        Utils.logger.info(this + " : new Element");
+        Utils.logger.info(this + " : 新元素");
         size++;
     }
 
     @Override
     public void clear() {
-        System.out.println("ConcreteCollection: Clearing collections");
+        Utils.logger.info(this + " : 创建集合");
     }
 
     @Override

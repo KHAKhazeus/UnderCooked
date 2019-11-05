@@ -51,7 +51,7 @@ public class OnlineOrderSystem{
                 if (buffer.size() > 0){
                     //对列中还有未处理的消息
                     String now = buffer.poll();
-                    Utils.logger.info("(" + this.toString() + ") : " + "Got Order: " + now);
+                    Utils.logger.info("(" + this.toString() + ") : " + "收到订单: " + now);
                 }
                 else if(!flag){
                     //全部处理完毕，并且外部程序请求终止系统
@@ -61,7 +61,7 @@ public class OnlineOrderSystem{
                     Thread.sleep(500);
                 }
                 catch (Exception e){
-                    Utils.logger.error("(" + this.toString() + ") : " + "Got an error because of Thread.Sleep");
+                    Utils.logger.error("(" + this.toString() + ") : " + "Thread.Sleep出错");
                     System.exit(1);
                 }
             }

@@ -28,7 +28,7 @@ public class StrangersCollection extends ConcreteCollectionWithInnerIterator{
         public Boolean hasNext() {
             //检查下一个的指针是否有效
             if ((cur + 1) >=0 && (cur + 1) < list.size()){
-                Utils.logger.info("(" + this.toString() + ") : " + "found another one!");
+                Utils.logger.info("(" + this.toString() + ") : " + "找到了下一个!");
                 return true;
             }
             else {
@@ -40,21 +40,21 @@ public class StrangersCollection extends ConcreteCollectionWithInnerIterator{
         @Override
         public Iterator next(){
             if (hasNext()){
-                Utils.logger.info("(" + this.toString() + ") : " + "fetching next Stranger");
+                Utils.logger.info("(" + this.toString() + ") : " + "返回下一个陌生人");
                 Stranger data = getData(cur + 1);
                 if (data != null){
                     cur++;
-                    Utils.logger.info("(" + this.toString() + ") : " + "Next Customer arrived (DO SOMETHING!)");
-                    Utils.logger.info("(" + this.toString() + ") : " + "Next Customer named: " + data.name);
+                    Utils.logger.info("(" + this.toString() + ") : " + "下一个陌生人到了（做点什么）！");
+                    Utils.logger.info("(" + this.toString() + ") : " + "下一个陌生人的名字: " + data.name);
                 }
                 else{
-                    Utils.logger.error("(" + this.toString() + ") : " + "StrangerCollection Failure");
+                    Utils.logger.error("(" + this.toString() + ") : " + "StrangerCollection 出错！");
                     System.exit(1);
                 }
                 return this;
             }
             else{
-                Utils.logger.info("(" + this.toString() + ") : " + "no other elements!");
+                Utils.logger.info("(" + this.toString() + ") : " + "没有其他陌生人了!");
                 return null;
             }
         }

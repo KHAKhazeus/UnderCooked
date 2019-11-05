@@ -20,8 +20,8 @@ public class FoodPackage {
     public String ingredientToString() {
         StringBuilder builder = new StringBuilder();
         for (Ingredient ingredient: ingredients){
-            builder.append("Ingredient Name: ").append(ingredient.name).append("; Weight: ").append(ingredient.kilogram)
-                .append(" kg; ").append("preferredMethod: ").append(ingredient.cookingMethod).append("\n");
+            builder.append("食材名: ").append(ingredient.name).append("; 重量: ").append(ingredient.kilogram)
+                .append(" 千克; ").append("加工方法: ").append(ingredient.cookingMethod).append("\n");
         }
         return builder.toString();
     }
@@ -40,7 +40,7 @@ public class FoodPackage {
             return ingredients.get(index);
         }
         else{
-            Utils.logger.error("(" + this.toString() + ") : " + "Attempting to get a non-existing ingredient!");
+            Utils.logger.error("(" + this.toString() + ") : " + "程序尝试获取并不存在的食材!");
             return null;
         }
     }

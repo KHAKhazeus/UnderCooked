@@ -31,14 +31,14 @@ public class OrdinaryCustomer implements Customer, Runnable{
     //启动时，正常客户们每1秒发送一个请求
     @Override
     public void run() {
-        String order = "Customer ordered Something! Please respond!";
+        String order = "正常客户下了订单，请回复！";
         while(flag){
             placeOrder(order);
             try{
                 Thread.sleep(1000);
             }
             catch (Exception e){
-                Utils.logger.error("(" + this.toString() + ") : " + "Got an error because of Thread.Sleep");
+                Utils.logger.error("(" + this.toString() + ") : " + "Thread.Sleep 错误");
                 System.exit(1);
             }
         }
