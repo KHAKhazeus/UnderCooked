@@ -1,6 +1,5 @@
 package nullObject;
 
-import delegation.Bakery;
 import org.junit.jupiter.api.Test;
 
 class NullObjectTest {
