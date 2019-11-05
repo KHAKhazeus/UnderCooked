@@ -30,7 +30,7 @@ public class OnlineOrderSystem{
 
     //接受消息，并将客户暂时加入黑名单，启动计时器屏蔽其这段时间的消息
     void receiveMessage(String order, Customer from){
-        if (blackList.indexOf(from) == -1){
+        if (from != null && order != null && blackList.indexOf(from) == -1){
             buffer.offer(order);
             blackList.add(from);
             Timer t = new Timer();

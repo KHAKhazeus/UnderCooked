@@ -10,12 +10,12 @@ class ThrottlingTest {
 
     @Test
     void main() {
-        try{
-            Thread.sleep(1000);
-        }
-        catch (Exception e){
-            Utils.logger.error("(" + this.toString() + ") : " + e.getMessage());
-        }
+//        try{
+//            Thread.sleep(1000);
+//        }
+//        catch (Exception e){
+//            Utils.logger.error("(" + this.toString() + ") : " + e.getMessage());
+//        }
         new Throttling().test();
     }
 }
