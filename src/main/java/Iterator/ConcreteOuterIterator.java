@@ -1,4 +1,4 @@
-package Iterator;
+package iterator;
 
 /*
     OuterIterator with package-friendly setCollection function
@@ -46,7 +46,7 @@ public class ConcreteOuterIterator implements Iterator{
     @Override
     public Object deduce(){
         if(cur == null){
-            Utils.logger.error("(" + this.toString() + ") : " + "Wandering main.java.Iterator!");
+            Utils.logger.error("(" + this.toString() + ") : " + "Wandering main.java.iterator!");
             System.exit(1);
             return null;
         }

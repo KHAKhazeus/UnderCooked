@@ -1,28 +1,16 @@
-package main.java.Mediator;
+package mediator;
 
-public class Kitchen extends InformationSystem {
-    @Override
-    public void inputMessage(String msg) {
+import Utils.Utils;
 
+public class Kitchen<INFOTYPE> extends InformationSystem<INFOTYPE> {
+
+    public void inputMessage(INFOTYPE msg) {
+        Utils.logger.info('(' + this.toString() + ") : " + "received new message: " + msg.toString());
+        callGrandMaster(msg, this);
     }
 
-    @Override
-    public void callGrandMaster(Object msg, Object... args) {
-
-    }
-
-    @Override
-    public void receiveGrandMaster(Object msg, Object... args) {
-
-    }
-
-    @Override
-    public void register(GrandMaster master) {
-
-    }
-
-    @Override
-    public void unregister(GrandMaster master) {
-
+    private void callGrandMaster(INFOTYPE msg, Object... args) {
+        Utils.logger.info('(' + this.toString() + ") : " + "sending message to grandmaster: " + msg.toString());
+        grandMaster.receive(msg, args[0], "Kitchen");
     }
 }

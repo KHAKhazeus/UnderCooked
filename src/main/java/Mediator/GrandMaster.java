@@ -1,6 +1,4 @@
-package main.java.Mediator;
-
-import java.util.ArrayList;
+package mediator;
 
 /*
     GrandMaster will be the mediator between different subdivisions
@@ -15,10 +13,6 @@ import java.util.ArrayList;
  */
 
 public interface GrandMaster {
-    ArrayList branches = null;
-    ArrayList buffer = null;
     void addToBranches(Branch branch);
-    void inform(Object msg, Object... args);
     void removeFromBranches(Branch branch);
-    void receive(Object msg, Object... args);
 }

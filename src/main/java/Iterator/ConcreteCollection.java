@@ -1,4 +1,4 @@
-package Iterator;
+package iterator;
 
 /*
     Not a really practical Collection!
