@@ -5,6 +5,6 @@ public class Milk extends Drink {
     Milk(String cupSize){
         this.drinkName = "Milk";
         this.cupSize = cupSize;
-        System.out.println("Producing a " + cupSize + " cup of milk");
+        System.out.println("Milk: Milk(" + this.toString() + "):生产了一份" + cupSize + "牛奶");
     }
 }

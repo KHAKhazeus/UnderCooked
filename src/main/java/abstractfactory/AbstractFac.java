@@ -5,10 +5,9 @@ public class AbstractFac {
         System.out.println("===========================");
         System.out.println("Testing AbstractFactory:");
         System.out.println("===========================");
-//        System.out.println("AbstractFactory:");
         DrinkFactory drinkFactory = new DrinkFactory();
-        drinkFactory.getCoffee("Large");
-        drinkFactory.getMilk("Mid");
-        drinkFactory.getJuice("Small");
+        drinkFactory.getCoffee("大杯");
+        drinkFactory.getMilk("中杯");
+        drinkFactory.getJuice("小杯");
     }
 }
