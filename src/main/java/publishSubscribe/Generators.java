@@ -17,7 +17,7 @@ public class Generators extends Thread implements Generator, Callable<String> {
 
     Generators(String name) {
         GenName = name;
-        System.out.println( "Generators:Generators:("+ this.toString()+ "):Creating immutable" + GenName);
+        System.out.println( "Generators:Generators:("+ this.toString()+ "):初始化不可变对象" + GenName);
     }
 
     public void addCook(Cook cook) {
@@ -33,27 +33,27 @@ public class Generators extends Thread implements Generator, Callable<String> {
     @Override
     public String call() throws Exception {
         for (Cook list : cooksList) {
-            System.out.println("GenName:call:("+ this.toString() +"):future promise call");
+            System.out.println("GenName:call:("+ this.toString() +"):future promise模式启动");
             list.UpdateMsg(this.GenName);
         }
         return GenName;
     }
 
     public void run() {
-        System.out.println( "GenName:run:("+this.toString() +"):Running " + GenName);
+        System.out.println( "GenName:run:("+this.toString() +"):运行" + GenName);
         try {
             for (Cook list : cooksList) {
                 list.UpdateMsg(this.GenName);
                 Thread.sleep(50);
             }
         } catch (InterruptedException e) {
-            System.out.println("GenName:run:("+ this.toString() +"):Thread " + GenName + " interrupted.");
+            System.out.println("GenName:run:("+ this.toString() +"):线程" + GenName + "中止");
         }
-        System.out.println("GenName:run:("+ this.toString() +"):Thread " + GenName + " exiting.");
+        System.out.println("GenName:run:("+ this.toString() +"):线程" + GenName + "退出");
     }
 
     public void start() {
-        System.out.println("GenName:start:("+ this.toString() +"):Starting " + GenName);
+        System.out.println("GenName:start:("+ this.toString() +"):启动" + GenName);
         if (t == null) {
             t = new Thread(this, GenName);
             t.start();

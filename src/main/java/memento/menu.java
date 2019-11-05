@@ -6,11 +6,11 @@ public class Menu {
     private int volSave = 0;
     // 保存此时的音量信息
     public void Save() {
-        System.out.println("memento:Save:("+this.toString()+"):Save data");
+        System.out.println("memento:Save:("+this.toString()+"):保存");
         volSave = vol;
     }
     public void Volume(int delta) {
         vol += delta;
-        System.out.println("memento:Volume:("+this.toString()+"):the volume is " + vol);
+        System.out.println("memento:Volume:("+this.toString()+"):当前的音量是" + vol);
     }
 }

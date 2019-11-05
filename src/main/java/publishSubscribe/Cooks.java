@@ -11,7 +11,7 @@ public class Cooks implements Cook {
     @Override
     public void UpdateMsg(String msg) {
         if (!"".equals(msg)) {
-            System.out.println("Cooks:UpdateMsg:("+ this.toString()+"):" + name + ": get " + msg);
+            System.out.println("Cooks:UpdateMsg:("+ this.toString()+"):" + name + ": 接收到" + msg);
         }
     }
 }
