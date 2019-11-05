@@ -1,4 +1,4 @@
-package publishSubscribe;
+package theadPool;
 import java.util.concurrent.FutureTask;
 
 import org.junit.jupiter.api.Test;
@@ -28,7 +28,7 @@ class publishSubscribeTest {
         gen2.addCook(cook3);
         gen2.addCook(cook4);
 
-        gen1.start();
+        gen1.notifyAll(10);
         FutureTask<String> ft = new FutureTask<>(gen2);
         new Thread(ft).start();
     }

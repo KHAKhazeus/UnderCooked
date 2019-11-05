@@ -28,7 +28,7 @@ class immutableTest {
         gen2.addCook(cook3);
         gen2.addCook(cook4);
 
-        gen1.start();
+        gen1.notifyAll(10);
         FutureTask<String> ft = new FutureTask<>(gen2);
         new Thread(ft).start();
     }
