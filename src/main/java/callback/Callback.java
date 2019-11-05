@@ -1,6 +1,6 @@
 package callback;
 
-class CBack {
+public class Callback {
     public static void test() {
         System.out.println("===========================");
         System.out.println("Testing Callback:");
