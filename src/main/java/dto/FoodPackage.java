@@ -9,12 +9,14 @@ import java.util.ArrayList;
 
 /*
     Data Transfer Object
+    打包用的类
  */
 public class FoodPackage {
     private ArrayList<Ingredient> ingredients = new ArrayList<>();
     private String orderedBy;
     private Timestamp preprocessedTime;
 
+    //将内部的材料进行格式化输出
     public String ingredientToString() {
         StringBuilder builder = new StringBuilder();
         for (Ingredient ingredient: ingredients){
@@ -32,6 +34,7 @@ public class FoodPackage {
         return ingredients;
     }
 
+    //获得指定材料
     Ingredient getIngredient(int index){
         if (index >= 0 && index < ingredients.size()){
             return ingredients.get(index);

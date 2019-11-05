@@ -1,7 +1,8 @@
 package dto;
 
+//材料模拟类
 public class Ingredient {
-    String name;
-    double kilogram;
-    String cookingMethod;
+    public String name;
+    public double kilogram;
+    public String cookingMethod;
 }
