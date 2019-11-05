@@ -1,20 +1,36 @@
 package monostate;
 
-// 今日特色菜类
+import java.util.Calendar;
+
+/**
+ * 每日特色菜
+ */
 public class SpecialToday {
     private static String specialDishName;
 
-    // 初始化
+    /**
+     * @description:  SpecialToday的构造函数，初始化为牛肉汉堡
+     * @param: null
+     * @return null
+     */
     SpecialToday() {
         specialDishName = "牛肉汉堡";
     }
 
-    // 展示今日特色菜
+    /**
+     * @description:  显示每日特色菜
+     * @param: null
+     * @return null
+     */
     public void showSpecialToday() {
-        System.out.println("今日特色菜肴：" + specialDishName );
+        System.out.println("SpecialToday: showSpecialToday(" + this.toString() + "今天的特色菜：" + specialDishName);
     }
 
-    // 设置今日特色菜
+    /**
+     * @description:  设置每日特色菜
+     * @param: null
+     * @return null
+     */
     public void setSpecialToday(String dishName) {
         SpecialToday.specialDishName = dishName;
     }
