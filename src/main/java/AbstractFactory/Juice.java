@@ -5,6 +5,6 @@ public class Juice extends Drink {
     Juice(String cupSize){
         this.drinkName = "Juice";
         this.cupSize = cupSize;
-        System.out.println("Producing a " + cupSize + " cup of juice");
+        System.out.println("Juice:Juice(" + this.toString() + "):Producing a " + cupSize + " cup of juice");
     }
 }
