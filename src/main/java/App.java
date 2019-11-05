@@ -269,7 +269,7 @@ public class App {
             System.out.println("===========================");
         }
         System.out.println("Bye~~~~");
-        System.exit(1);
+//        System.exit(1);
 
     }
 }
