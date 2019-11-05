@@ -15,7 +15,7 @@ public class State {
         /**
          * 打印一个鸡肉食材创建
          */
-        System.out.println("Chicken:Chicken():("+chicken.toString()+"):chicken has been created");
+        System.out.println("Chicken: Chicken(): ("+chicken.toString()+"): 食材鸡肉被创建");
 
         /**
          * 打印鸡肉的切、煎之后各个状态变化

@@ -1,4 +1,4 @@
-package publishsubscriber;
+package theadPool;
 // 食材工厂接口
 
 public interface Generator {

@@ -8,10 +8,10 @@ public class Composite {
         System.out.println("===========================");
 
         try{
-            Item item_a = new Content("a",2);
-            Item item_d = new Container("d");
-            Container container_b = new Container("b");
-            Content content_c = new Content("c",3);
+            Item item_a = new Content("筷子",2);
+            Item item_d = new Container("筷笼");
+            Container container_b = new Container("塑料袋");
+            Content content_c = new Content("勺子",3);
 
             item_d.add(item_a);
             container_b.add(content_c);

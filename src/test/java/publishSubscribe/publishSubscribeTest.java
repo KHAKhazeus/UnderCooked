@@ -1,13 +1,14 @@
-package futurepromise;
-
+package publishSubscribe;
 import java.util.concurrent.FutureTask;
 
-public class FuturePromise {
-    public static void test() {
+import org.junit.jupiter.api.Test;
 
-        System.out.println("===========================");
-        System.out.println("Testing Future/Promise:");
-        System.out.println("===========================");
+import static org.junit.jupiter.api.Assertions.*;
+
+class publishSubscribeTest {
+    @Test
+    void main() {
+        System.out.println("Testing publishSubscribe");
 
         Cooks cook1 = new Cooks("厨师1");
         Cooks cook2 = new Cooks("厨师2");
@@ -27,7 +28,7 @@ public class FuturePromise {
         gen2.addCook(cook3);
         gen2.addCook(cook4);
 
-        gen1.start();
+        gen1.notifyAll(10);
         FutureTask<String> ft = new FutureTask<>(gen2);
         new Thread(ft).start();
     }

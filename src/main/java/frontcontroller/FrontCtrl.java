@@ -8,8 +8,7 @@ public class FrontCtrl {
         System.out.println("===========================");
 
         FrontController frontController = new FrontController();
-        frontController.dispatchRequest("HOME", "Jack");
-        frontController.dispatchRequest("PLAYER", "Jack");
-        frontController.dispatchRequest("PLAYER", "Admin");
+        frontController.dispatchRequest("主页", "张三");
+        frontController.dispatchRequest("玩家页", "管理员");
     }
 }

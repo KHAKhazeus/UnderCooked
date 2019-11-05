@@ -14,7 +14,7 @@ public class Balking {
         /**
          * 打印一个面粉食材创建
          */
-        System.out.println("Flour:Flour():("+flour.toString()+"):flour has been created");
+        System.out.println("Flour:Flour():("+flour.toString()+"):食材面粉被创建了");
 
         /**
          * 打印面粉此刻是否可以搅拌和加鸡蛋

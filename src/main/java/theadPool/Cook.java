@@ -1,4 +1,4 @@
-package publishsubscriber;
+package theadPool;
 // Cooks 的接口
 
 public interface Cook {
