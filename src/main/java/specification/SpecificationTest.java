@@ -9,7 +9,7 @@ package specification;
  * @version: V1.0
 */
 public class SpecificationTest {
-    public static void main(String[] args) {
+    public static void test() {
         System.out.println("Test Specification");
         /**
          * 创建厨师实例

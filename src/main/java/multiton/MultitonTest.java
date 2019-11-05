@@ -11,7 +11,7 @@ import java.util.Vector;
  * @version: V1.0
 */
 public class MultitonTest {
-    public static void main(String[] args) {
+    public static void test() {
         System.out.println("Test Multiton");
         /**
          * 将有限的锅获取完毕，再归还再获取

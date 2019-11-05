@@ -12,7 +12,7 @@ import java.util.Vector;
 */
 public class PrototypeTest {
 
-    public static void main(String[] args) {
+    public static void test() {
         System.out.println("Test Prototype");
         Basket manager = Basket.getInstance();
         VegetableType input[] = new VegetableType[]{VegetableType.Spinach, VegetableType.Tomato, VegetableType.Potato, VegetableType.Potato, VegetableType.Tomato};

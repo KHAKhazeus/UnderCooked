@@ -10,7 +10,7 @@ package proxy;
 */
 public class ProxyTest {
 
-    public static void main(String[] args) {
+    public static void test() {
         System.out.println("Test Proxy");
         /**
          * 创建主厨与助手实例
