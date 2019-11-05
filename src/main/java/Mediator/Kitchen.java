@@ -2,6 +2,7 @@ package mediator;
 
 import Utils.Utils;
 
+//厨房信息台
 public class Kitchen<INFOTYPE> extends InformationSystem<INFOTYPE> {
 
     public void inputMessage(INFOTYPE msg) {

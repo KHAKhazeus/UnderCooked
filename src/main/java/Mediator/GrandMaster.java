@@ -13,6 +13,8 @@ package mediator;
  */
 
 public interface GrandMaster {
+    //将分支加入系统
     void addToBranches(Branch branch);
+    //取消对于分支的管理
     void removeFromBranches(Branch branch);
 }

@@ -14,17 +14,20 @@ public class Spammer implements Customer, Runnable {
         commonSystem = system;
     }
 
+    //更改系统
     @Override
     public void changeSystem(OnlineOrderSystem system){
         commonSystem = system;
     }
 
+    //下订单
     @Override
     public void placeOrder(String order) {
         order += new Timestamp(System.currentTimeMillis());
         commonSystem.receiveMessage(order, this);
     }
 
+    //恶意用户每0.2秒发送一个请求
     @Override
     public void run() {
         String order = "Spammer ordered Nothing! Hahaha!";

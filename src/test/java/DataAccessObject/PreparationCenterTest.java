@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class PreparationCenterTest {
     @Test
     void main(){
+        //第一批物料
         Ingredient cabage1 = new Ingredient();
         cabage1.name = "cabage 1";
         cabage1.cookingMethod = "boil";
@@ -19,9 +20,12 @@ class PreparationCenterTest {
         Stock stock = new Stock();
         Porter porter = new Porter(stock);
         PreparationCenter preparationCenter = new PreparationCenter(porter);
+        //仓库收到预定
         stock.receiving(cabage1);
         stock.receiving(meat1);
+        //预处理处请求获取处理好的物料，已经经由porter搬运且贴上仓库标签，从而可以溯源
         preparationCenter.fetchNextBatch();
+        //第二批的物料
         Ingredient cabage2 = new Ingredient();
         cabage2.name = "cabage 2";
         cabage2.cookingMethod = "boil";

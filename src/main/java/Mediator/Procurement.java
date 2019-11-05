@@ -2,6 +2,7 @@ package mediator;
 
 import Utils.Utils;
 
+//采购信息台
 public class Procurement<INFOTYPE> extends InformationSystem<INFOTYPE> {
 
     public void inputMessage(INFOTYPE msg) {

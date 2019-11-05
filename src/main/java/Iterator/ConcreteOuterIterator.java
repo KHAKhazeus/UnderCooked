@@ -7,15 +7,20 @@ package iterator;
 
 import Utils.Utils;
 
+//配合ConcreteCollection一起使用的迭代器类
 public class ConcreteOuterIterator implements Iterator{
+    //由于外部类的结构，我们需要将迭代器与集合进行绑定
     void setCollection(ConcreteCollection target) {
         collection = target;
         cur = target.getData();
     }
 
     ConcreteCollection collection;
+
+    //现在指向
     Object cur = null;
 
+    //剩余参考ConcreteCollectionWithInnerIterator中的迭代器定义即可
     @Override
     public Boolean hasNext() {
         Utils.logger.info("(" + this.toString() + ") : " + "found another one!");

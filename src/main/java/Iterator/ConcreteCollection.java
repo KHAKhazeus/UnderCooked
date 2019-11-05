@@ -6,10 +6,12 @@ package iterator;
 
 import Utils.Utils;
 
+//对于支持迭代器的集合的一种实现方式，将迭代器完全与集合分开（不推荐）
 public class ConcreteCollection implements Collection{
 
     private int size = 0;
 
+    //模拟存储的数据，因为这并不是一个真正会向用户开放存储的类，只是一个PROTOTYPE
     private Object data;
 
     public int size(){
@@ -24,6 +26,7 @@ public class ConcreteCollection implements Collection{
         return data;
     }
 
+    //模拟插入新数据
     public void insert(Object thing) {
         data = thing;
         Utils.logger.info(this + " : new Element");

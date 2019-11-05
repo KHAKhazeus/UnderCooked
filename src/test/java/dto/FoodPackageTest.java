@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class FoodPackageTest {
     @Test
     void main(){
+        //新的物料
         Ingredient cabage = new Ingredient();
         cabage.name = "cabage";
         cabage.cookingMethod = "boil";
@@ -18,6 +19,7 @@ class FoodPackageTest {
         Preprocessing preprocessingLine = new Preprocessing();
         RobotChef chef = new RobotChef();
         preprocessingLine.establishPipe(chef);
+        //预处理之后再递送到厨师手上
         preprocessingLine.preprocess("FoodKing", cabage, meat);
     }
 

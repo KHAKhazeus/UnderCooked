@@ -2,6 +2,7 @@ package mediator;
 
 import Utils.Utils;
 
+//前台信息台
 public class Reception<INFOTYPE> extends InformationSystem<INFOTYPE> {
     public void inputMessage(INFOTYPE msg) {
         Utils.logger.info('(' + this.toString() + ") : " + "received new message: " + msg.toString());
