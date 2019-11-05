@@ -14,7 +14,7 @@ public class Button {
     public void pushTheButton(int time) throws TimeException{
         Utils.logger.info("(" +this.toString() +") : ");
         if(time<=0){
-            TimeException exception=new TimeException("Cannot set time below 0 !");
+            TimeException exception=new TimeException("设置时间请大于0 !");
             throw exception;
         }
         this.state = false;
@@ -22,7 +22,7 @@ public class Button {
     }
     public void callback(){
         this.state = true;
-        System.out.println("Finish!(Button pop up!)");
+        System.out.println("完成!(按钮弹起!)");
     }
     public boolean getState(){
         return state;

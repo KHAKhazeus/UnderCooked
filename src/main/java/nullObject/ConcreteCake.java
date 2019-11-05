@@ -9,7 +9,7 @@ public class ConcreteCake implements Cake {
 
     @Override
     public void serve() {
-        System.out.println(name+" is coming!");
+        System.out.println(name+" 正在上菜!");
     }
 
     @Override

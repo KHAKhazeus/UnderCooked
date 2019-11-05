@@ -1,7 +1,7 @@
 package decorator;
 
 public class Milk extends Drink {
-    private String description = "Milk";
+    private String description = "牛奶";
     @Override
     public String getDescription() {
         return description;

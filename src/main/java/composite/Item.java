@@ -10,7 +10,7 @@ public abstract class Item {
     }
 
     public Item add(Item item) throws Exception {
-        throw new Exception("Item "+this.getName()+" cannot add Item!");
+        throw new Exception("Item "+this.getName()+" 不可以加入到该 Item!");
     }
 
     protected boolean setParent(Container parent){

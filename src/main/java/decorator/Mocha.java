@@ -10,6 +10,6 @@ public class Mocha extends DrinkDecorator {
     public String getDescription() {
         
 
-       return super.getDescription()+" + Mocha";
+       return super.getDescription()+" + 摩卡";
     }
 }

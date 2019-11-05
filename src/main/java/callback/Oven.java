@@ -6,7 +6,7 @@ public class Oven {
         if(button.getState()){
             return;
         }
-        System.out.println("Start baking...");
+        System.out.println("开始烘焙...");
 
         countDown(time);
 

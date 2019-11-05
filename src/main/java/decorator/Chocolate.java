@@ -7,6 +7,6 @@ public class Chocolate extends DrinkDecorator {
 
     @Override
     public String getDescription() {
-        return super.getDescription()+" + Chocolate";
+        return super.getDescription()+" + 巧克力";
     }//输出配料信息
 }

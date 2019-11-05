@@ -11,6 +11,6 @@ public class NullCake implements Cake {
     @Override
     public void serve() {
         Utils.logger.info("("+this.toString()+") : ");
-        System.out.println("Sorry, we don't have the food you ordered!");
+        System.out.println("抱歉，无法提供您所点食物!");
     }
 }

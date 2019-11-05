@@ -23,11 +23,11 @@ public class Composite {
 
             //Check getSize
             int size_a = item_a.getSize();
-            System.out.println(item_a.getName()+".size: "+size_a);
+            System.out.println(item_a.getName()+"的大小是: "+size_a);
 
 
             int size_c = content_c.getSize();
-            System.out.println(content_c.getName()+".size: "+size_c);
+            System.out.println(content_c.getName()+"的大小是: "+size_c);
 
 
 

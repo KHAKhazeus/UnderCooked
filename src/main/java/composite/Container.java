@@ -33,11 +33,11 @@ public class Container extends Item {
         Utils.logger.info("("+this.toString()+")"+" : ");
         if(item.setParent(this)){
             itemList.add(item);
-            System.out.println(this.getName()+" is added in the Container.");
+            System.out.println(this.getName()+" 被加入到Container中.");
             return item;
         }
         else{
-            throw new Exception(item.getName() +" has already been added in the Container " + item.getParent().getName()+"!");
+            throw new Exception(item.getName() +" 已经被加入到 " + item.getParent().getName()+"，请勿重复添加！");
         }
 
     }
@@ -45,7 +45,7 @@ public class Container extends Item {
     @Override
     public void printList() throws Exception {
        Utils.logger.info("("+this.toString()+") : ");
-       System.out.println("Container "+this.getName()+" has these items:");
+       System.out.println("Container "+this.getName()+" 包含这些items:");
        for(Item item:itemList){
            System.out.println(item.getName());
        }
