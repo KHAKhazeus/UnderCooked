@@ -41,6 +41,7 @@ public class Generators implements Generator, Callable<String> {
         return GenName;
     }
 
+    // thead pool
     public void notifyAll(int max) {
         System.out.println("GenName:call:("+ this.toString() +"):thead pool");
         ExecutorService service = Executors.newFixedThreadPool(max);
