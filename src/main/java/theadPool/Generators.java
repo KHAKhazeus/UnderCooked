@@ -1,4 +1,4 @@
-package immutable;
+package theadPool;
 // 食材工厂接口的实现
 // 设计模式:
 // 发布订阅模式(pub-sub)
@@ -41,6 +41,7 @@ public class Generators implements Generator, Callable<String> {
         return GenName;
     }
 
+    // thead pool
     public void notifyAll(int max) {
         System.out.println("GenName:call:("+ this.toString() +"):thead pool");
         ExecutorService service = Executors.newFixedThreadPool(max);

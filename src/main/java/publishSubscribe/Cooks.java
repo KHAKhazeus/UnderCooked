@@ -1,4 +1,4 @@
-package futurePromise;
+package publishSubscribe;
 // Cook 接口的实现
 
 public class Cooks implements Cook {
