@@ -23,10 +23,15 @@ public class OnlineOrderSystem{
     //通过FLAG来控制输出线程的关闭
     public void stopOutputting(){
         outputRunnable.flag = false;
+        for (Timer t: timer){
+            t.cancel();
+        }
     }
 
     //消息队列
     Queue<String> buffer = new LinkedList<String>();
+
+    ArrayList<Timer> timer = new ArrayList<>();
 
     //接受消息，并将客户暂时加入黑名单，启动计时器屏蔽其这段时间的消息
     synchronized void receiveMessage(String order, Customer from){
@@ -36,6 +41,7 @@ public class OnlineOrderSystem{
             Timer t = new Timer();
             BlackListTimer newTimer = new BlackListTimer(from);
             t.schedule(newTimer, 500);
+            timer.add(t);
         }
         else{
             buffer.offer("Filtered: " + new Timestamp(System.currentTimeMillis()));

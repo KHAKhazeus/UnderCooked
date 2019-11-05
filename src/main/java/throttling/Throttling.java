@@ -27,9 +27,12 @@ public class Throttling {
         //控制模拟时间
         Timer t = new Timer();
         t.schedule(new SimulateTimer(), 10000);
+
         //等待全部输出完毕
         try{
             system.outputThread.join();
+            t.cancel();
+
         }
         catch (Exception e){
             Utils.logger.error("(" + this.toString() + ")" + " : " + "无法延长主函数的生命周期，出错！");
