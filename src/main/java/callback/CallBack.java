@@ -1,4 +1,0 @@
-package callback;
-
-class CallBack {
-}
